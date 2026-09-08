@@ -1,6 +1,6 @@
 {
   "name": "eu-einvoicing-mandates",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Machine-readable e-invoicing mandate data for all 27 EU member states plus Norway — dates, formats, thresholds and networks, split by scope and obligation.",
   "type": "module",
   "main": "index.mjs",
