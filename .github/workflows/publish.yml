@@ -1,0 +1,40 @@
+name: Publish to npm
+
+# Manual, or on a version tag. Deliberately not on every push to main: a
+# publish is irreversible -- a version can never be reused on the registry.
+on:
+  workflow_dispatch:
+  push:
+    tags: ["v*"]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # lets npm record a provenance attestation for the package
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          registry-url: "https://registry.npmjs.org"
+
+      - run: npm run validate
+
+      - name: Refuse to publish a version that already exists
+        run: |
+          v=$(node -p "require('./package.json').version")
+          name=$(node -p "require('./package.json').name")
+          if npm view "$name@$v" version >/dev/null 2>&1; then
+            echo "::error::$name@$v is already published — bump the version first"
+            exit 1
+          fi
+          echo "$name@$v is not yet published."
+
+      - name: Show exactly what will be published
+        run: npm pack --dry-run
+
+      - run: npm publish --access public --provenance
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -1,0 +1,45 @@
+name: Validate dataset
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+
+      # Schema plus internal-consistency checks. This is what catches a country
+      # marked "upcoming" whose phase date has already passed -- the exact way
+      # mandate data goes stale without anyone editing it.
+      - run: npm run validate
+
+      # INDEX.md is generated from the dataset. If it is out of date the
+      # published index contradicts the data it claims to summarise.
+      - name: Check INDEX.md is regenerated
+        run: |
+          npm run build:index
+          if ! git diff --quiet -- INDEX.md; then
+            echo "::error::INDEX.md is stale — run 'npm run build:index' and commit the result"
+            git diff -- INDEX.md
+            exit 1
+          fi
+          echo "INDEX.md is up to date."
+
+      # The published package version must match the dataset version, or the
+      # registry serves data under a tag that does not describe it.
+      - name: Check package version matches dataset version
+        run: |
+          pkg=$(node -p "require('./package.json').version")
+          data=$(node -p "require('./data/mandates.json').version")
+          if [ "$pkg" != "$data" ]; then
+            echo "::error::package.json is $pkg but the dataset says $data"
+            exit 1
+          fi
+          echo "Versions agree: $pkg"
