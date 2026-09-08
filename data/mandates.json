@@ -1,0 +1,1105 @@
+{
+  "$schema": "../schema/mandate.schema.json",
+  "version": "0.2.0",
+  "license": "CC-BY-4.0",
+  "last_updated": "2026-09-08",
+  "source_note": "Derived from invoicia.eu country guides. Official source URLs are not yet attached — see sources[] per country. Treat any phase with needs_verification=true as provisional.",
+  "countries": [
+    {
+      "code": "AT",
+      "name": "Austria",
+      "slug": "austria",
+      "status": "partial",
+      "network": "peppol",
+      "peppol_supported": true,
+      "standard": "EN 16931",
+      "formats": [
+        "ebInterface",
+        "PEPPOL BIS Billing 3.0"
+      ],
+      "detail_tier": "minimal",
+      "phases": [
+        {
+          "scope": "b2g",
+          "obligation": "receive",
+          "date": "2020-04-18",
+          "date_precision": "approximate",
+          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        },
+        {
+          "scope": "b2b",
+          "obligation": "both",
+          "date": null,
+          "date_precision": "unknown",
+          "applies_to": "No adopted national B2B mandate",
+          "threshold": null,
+          "voluntary": true,
+          "needs_verification": true
+        }
+      ],
+      "sources": [],
+      "last_verified": "2026-09-08",
+      "notes": "Long-standing B2G mandate via e-Rechnung.gv.at. No national B2B mandate adopted."
+    },
+    {
+      "code": "BE",
+      "name": "Belgium",
+      "slug": "belgium",
+      "status": "active",
+      "network": "hybrid",
+      "peppol_supported": true,
+      "standard": "EN 16931",
+      "formats": [
+        "PEPPOL BIS Billing 3.0"
+      ],
+      "phases": [
+        {
+          "scope": "b2b",
+          "obligation": "both",
+          "date": "2026-01-01",
+          "date_precision": "exact",
+          "applies_to": "All VAT-registered businesses, including small and micro businesses",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": false
+        }
+      ],
+      "sources": [],
+      "last_verified": "2026-09-08",
+      "notes": "No size-based exemption and no phased rollout. B2C is exempt. Delivery via PEPPOL or the Mercurius platform.",
+      "detail_tier": "full"
+    },
+    {
+      "code": "BG",
+      "name": "Bulgaria",
+      "slug": "bulgaria",
+      "status": "partial",
+      "network": "peppol",
+      "peppol_supported": true,
+      "standard": "EN 16931",
+      "formats": [
+        "EN 16931"
+      ],
+      "detail_tier": "minimal",
+      "phases": [
+        {
+          "scope": "b2g",
+          "obligation": "receive",
+          "date": "2020-04-18",
+          "date_precision": "approximate",
+          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        },
+        {
+          "scope": "b2b",
+          "obligation": "both",
+          "date": null,
+          "date_precision": "unknown",
+          "applies_to": "No adopted national B2B mandate",
+          "threshold": null,
+          "voluntary": true,
+          "needs_verification": true
+        }
+      ],
+      "sources": [],
+      "last_verified": "2026-09-08",
+      "notes": "B2G only. B2B expected to follow ViDA rather than domestic law."
+    },
+    {
+      "code": "CY",
+      "name": "Cyprus",
+      "slug": "cyprus",
+      "status": "partial",
+      "network": "peppol",
+      "peppol_supported": true,
+      "standard": "EN 16931",
+      "formats": [
+        "EN 16931"
+      ],
+      "detail_tier": "minimal",
+      "phases": [
+        {
+          "scope": "b2g",
+          "obligation": "receive",
+          "date": "2020-04-18",
+          "date_precision": "approximate",
+          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        },
+        {
+          "scope": "b2b",
+          "obligation": "both",
+          "date": null,
+          "date_precision": "unknown",
+          "applies_to": "No adopted national B2B mandate",
+          "threshold": null,
+          "voluntary": true,
+          "needs_verification": true
+        }
+      ],
+      "sources": [],
+      "last_verified": "2026-09-08",
+      "notes": "B2G only."
+    },
+    {
+      "code": "CZ",
+      "name": "Czechia",
+      "slug": "czechia",
+      "status": "partial",
+      "network": "peppol",
+      "peppol_supported": true,
+      "standard": "EN 16931",
+      "formats": [
+        "ISDOC",
+        "EN 16931"
+      ],
+      "detail_tier": "minimal",
+      "phases": [
+        {
+          "scope": "b2g",
+          "obligation": "receive",
+          "date": "2020-04-18",
+          "date_precision": "approximate",
+          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        },
+        {
+          "scope": "b2b",
+          "obligation": "both",
+          "date": null,
+          "date_precision": "unknown",
+          "applies_to": "No adopted national B2B mandate",
+          "threshold": null,
+          "voluntary": true,
+          "needs_verification": true
+        }
+      ],
+      "sources": [],
+      "last_verified": "2026-09-08",
+      "notes": "B2G only; ISDOC is the domestic format alongside EN 16931."
+    },
+    {
+      "code": "DE",
+      "name": "Germany",
+      "slug": "germany",
+      "status": "active",
+      "network": "peppol",
+      "peppol_supported": true,
+      "standard": "EN 16931",
+      "formats": [
+        "XRechnung",
+        "ZUGFeRD"
+      ],
+      "phases": [
+        {
+          "scope": "b2b",
+          "obligation": "receive",
+          "date": "2025-01-01",
+          "date_precision": "exact",
+          "applies_to": "All German VAT-registered businesses",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": false
+        },
+        {
+          "scope": "b2b",
+          "obligation": "issue",
+          "date": "2027-01-01",
+          "date_precision": "exact",
+          "applies_to": "Businesses above the turnover threshold",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        },
+        {
+          "scope": "b2b",
+          "obligation": "issue",
+          "date": "2028-01-01",
+          "date_precision": "exact",
+          "applies_to": "All remaining businesses",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": false
+        }
+      ],
+      "sources": [],
+      "last_verified": "2026-09-08",
+      "notes": "Receipt obligation is already universal; the send obligation phases in by company size to 2028. This asymmetry is the most commonly misread part of the German mandate.",
+      "detail_tier": "full"
+    },
+    {
+      "code": "DK",
+      "name": "Denmark",
+      "slug": "denmark",
+      "status": "active",
+      "network": "hybrid",
+      "peppol_supported": true,
+      "standard": "EN 16931",
+      "formats": [
+        "OIOUBL",
+        "PEPPOL BIS Billing 3.0"
+      ],
+      "phases": [
+        {
+          "scope": "b2g",
+          "obligation": "both",
+          "date": "2011-01-01",
+          "date_precision": "approximate",
+          "applies_to": "All public-sector suppliers via NemHandel",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        },
+        {
+          "scope": "b2b",
+          "obligation": "both",
+          "date": "2024-01-01",
+          "date_precision": "approximate",
+          "applies_to": "Companies above the Bookkeeping Act revenue threshold",
+          "threshold": {
+            "metric": "annual_revenue",
+            "currency": "DKK",
+            "amount": 300000,
+            "comparator": "gt"
+          },
+          "voluntary": false,
+          "needs_verification": true
+        }
+      ],
+      "sources": [],
+      "last_verified": "2026-09-08",
+      "notes": "Driven by the Bookkeeping Act (bogføringsloven) digital bookkeeping requirement, which phases by company class rather than a single cutover.",
+      "detail_tier": "full"
+    },
+    {
+      "code": "EE",
+      "name": "Estonia",
+      "slug": "estonia",
+      "status": "partial",
+      "network": "peppol",
+      "peppol_supported": true,
+      "standard": "EN 16931",
+      "formats": [
+        "EN 16931"
+      ],
+      "detail_tier": "minimal",
+      "phases": [
+        {
+          "scope": "b2g",
+          "obligation": "receive",
+          "date": "2020-04-18",
+          "date_precision": "approximate",
+          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        },
+        {
+          "scope": "b2b",
+          "obligation": "both",
+          "date": "2025-07-01",
+          "date_precision": "approximate",
+          "applies_to": "Sellers must issue an e-invoice on request from a registered buyer",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        }
+      ],
+      "sources": [],
+      "last_verified": "2026-09-08",
+      "notes": "Not a blanket mandate: it establishes a buyer's right to demand an e-invoice."
+    },
+    {
+      "code": "ES",
+      "name": "Spain",
+      "slug": "spain",
+      "status": "partial",
+      "network": "national",
+      "peppol_supported": false,
+      "standard": "EN 16931",
+      "formats": [
+        "Facturae",
+        "EN 16931"
+      ],
+      "phases": [
+        {
+          "scope": "b2b",
+          "obligation": "both",
+          "date": "2025-01-01",
+          "date_precision": "approximate",
+          "applies_to": "Large companies above the revenue threshold",
+          "threshold": {
+            "metric": "annual_revenue",
+            "currency": "EUR",
+            "amount": 8000000,
+            "comparator": "gt"
+          },
+          "voluntary": false,
+          "needs_verification": true
+        },
+        {
+          "scope": "b2b",
+          "obligation": "both",
+          "date": "2027-01-01",
+          "date_precision": "approximate",
+          "applies_to": "All remaining businesses",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        }
+      ],
+      "sources": [],
+      "last_verified": "2026-09-08",
+      "notes": "Driven by the Crea y Crece law; commencement depends on implementing regulation and has slipped repeatedly. Dates here are the least reliable in the dataset.",
+      "detail_tier": "full"
+    },
+    {
+      "code": "FI",
+      "name": "Finland",
+      "slug": "finland",
+      "status": "partial",
+      "network": "peppol",
+      "peppol_supported": true,
+      "standard": "EN 16931",
+      "formats": [
+        "Finvoice",
+        "PEPPOL BIS Billing 3.0"
+      ],
+      "detail_tier": "minimal",
+      "phases": [
+        {
+          "scope": "b2g",
+          "obligation": "receive",
+          "date": "2020-04-18",
+          "date_precision": "approximate",
+          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        },
+        {
+          "scope": "b2b",
+          "obligation": "both",
+          "date": "2020-04-01",
+          "date_precision": "approximate",
+          "applies_to": "Buyers may require e-invoices from suppliers",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        }
+      ],
+      "sources": [],
+      "last_verified": "2026-09-08",
+      "notes": "Act on Electronic Invoicing gives businesses a right to request an EN 16931 invoice."
+    },
+    {
+      "code": "FR",
+      "name": "France",
+      "slug": "france",
+      "status": "active",
+      "network": "hybrid",
+      "peppol_supported": true,
+      "standard": "EN 16931",
+      "formats": [
+        "Factur-X",
+        "UBL 2.1",
+        "CII"
+      ],
+      "phases": [
+        {
+          "scope": "b2b",
+          "obligation": "receive",
+          "date": "2026-09-01",
+          "date_precision": "exact",
+          "applies_to": "All French VAT-registered businesses",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        },
+        {
+          "scope": "b2b",
+          "obligation": "issue",
+          "date": "2026-09-01",
+          "date_precision": "exact",
+          "applies_to": "Large enterprises and mid-caps",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        },
+        {
+          "scope": "b2b",
+          "obligation": "issue",
+          "date": "2027-09-01",
+          "date_precision": "exact",
+          "applies_to": "SMEs and micro-enterprises",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        }
+      ],
+      "sources": [],
+      "last_verified": "2026-09-08",
+      "notes": "Routed through the Portail Public de Facturation (PPF) or an accredited PDP. The timetable has been revised more than once.",
+      "detail_tier": "full"
+    },
+    {
+      "code": "GR",
+      "name": "Greece",
+      "slug": "greece",
+      "status": "partial",
+      "network": "hybrid",
+      "peppol_supported": true,
+      "standard": "EN 16931",
+      "formats": [
+        "myDATA",
+        "EN 16931"
+      ],
+      "detail_tier": "minimal",
+      "phases": [
+        {
+          "scope": "b2g",
+          "obligation": "receive",
+          "date": "2020-04-18",
+          "date_precision": "approximate",
+          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        },
+        {
+          "scope": "b2b",
+          "obligation": "both",
+          "date": null,
+          "date_precision": "unknown",
+          "applies_to": "B2B mandate legislated but commencement dependent on derogation",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        }
+      ],
+      "sources": [],
+      "last_verified": "2026-09-08",
+      "notes": "myDATA reporting is separate from, and already broader than, the e-invoicing mandate."
+    },
+    {
+      "code": "HR",
+      "name": "Croatia",
+      "slug": "croatia",
+      "status": "partial",
+      "network": "hybrid",
+      "peppol_supported": true,
+      "standard": "EN 16931",
+      "formats": [
+        "EN 16931 (UBL / CII) via FINA"
+      ],
+      "phases": [
+        {
+          "scope": "b2g",
+          "obligation": "both",
+          "date": "2019-07-01",
+          "date_precision": "approximate",
+          "applies_to": "All government suppliers",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        },
+        {
+          "scope": "b2b",
+          "obligation": "both",
+          "date": null,
+          "date_precision": "unknown",
+          "applies_to": "Voluntary — no firm B2B mandate date adopted",
+          "threshold": null,
+          "voluntary": true,
+          "needs_verification": true
+        }
+      ],
+      "sources": [],
+      "last_verified": "2026-09-08",
+      "notes": "B2G via FINA eFaktura since 2019; B2B available voluntarily via Moj e-Račun.",
+      "detail_tier": "full"
+    },
+    {
+      "code": "HU",
+      "name": "Hungary",
+      "slug": "hungary",
+      "status": "partial",
+      "network": "national",
+      "peppol_supported": false,
+      "standard": "EN 16931",
+      "formats": [
+        "RTIR XML"
+      ],
+      "detail_tier": "minimal",
+      "phases": [
+        {
+          "scope": "b2g",
+          "obligation": "receive",
+          "date": "2020-04-18",
+          "date_precision": "approximate",
+          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        },
+        {
+          "scope": "b2b",
+          "obligation": "both",
+          "date": "2021-01-04",
+          "date_precision": "approximate",
+          "applies_to": "Real-time invoice reporting for all domestic transactions",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        }
+      ],
+      "sources": [],
+      "last_verified": "2026-09-08",
+      "notes": "RTIR is real-time REPORTING, not structured e-invoicing. Do not conflate the two."
+    },
+    {
+      "code": "IE",
+      "name": "Ireland",
+      "slug": "ireland",
+      "status": "partial",
+      "network": "peppol",
+      "peppol_supported": true,
+      "standard": "EN 16931",
+      "formats": [
+        "EN 16931"
+      ],
+      "detail_tier": "minimal",
+      "phases": [
+        {
+          "scope": "b2g",
+          "obligation": "receive",
+          "date": "2020-04-18",
+          "date_precision": "approximate",
+          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        },
+        {
+          "scope": "b2b",
+          "obligation": "both",
+          "date": null,
+          "date_precision": "unknown",
+          "applies_to": "No adopted national B2B mandate",
+          "threshold": null,
+          "voluntary": true,
+          "needs_verification": true
+        }
+      ],
+      "sources": [],
+      "last_verified": "2026-09-08",
+      "notes": "B2G only."
+    },
+    {
+      "code": "IT",
+      "name": "Italy",
+      "slug": "italy",
+      "status": "active",
+      "network": "national",
+      "peppol_supported": false,
+      "standard": "EN 16931",
+      "formats": [
+        "FatturaPA"
+      ],
+      "detail_tier": "minimal",
+      "phases": [
+        {
+          "scope": "b2g",
+          "obligation": "receive",
+          "date": "2020-04-18",
+          "date_precision": "approximate",
+          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        },
+        {
+          "scope": "b2b",
+          "obligation": "both",
+          "date": "2019-01-01",
+          "date_precision": "approximate",
+          "applies_to": "All VAT-registered businesses via the SdI clearance platform",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        }
+      ],
+      "sources": [],
+      "last_verified": "2026-09-08",
+      "notes": "The EU's first universal B2B clearance mandate. FatturaPA via SdI, not PEPPOL."
+    },
+    {
+      "code": "LT",
+      "name": "Lithuania",
+      "slug": "lithuania",
+      "status": "partial",
+      "network": "peppol",
+      "peppol_supported": true,
+      "standard": "EN 16931",
+      "formats": [
+        "EN 16931"
+      ],
+      "detail_tier": "minimal",
+      "phases": [
+        {
+          "scope": "b2g",
+          "obligation": "receive",
+          "date": "2020-04-18",
+          "date_precision": "approximate",
+          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        },
+        {
+          "scope": "b2b",
+          "obligation": "both",
+          "date": null,
+          "date_precision": "unknown",
+          "applies_to": "No adopted national B2B mandate",
+          "threshold": null,
+          "voluntary": true,
+          "needs_verification": true
+        }
+      ],
+      "sources": [],
+      "last_verified": "2026-09-08",
+      "notes": "B2G via E-saskaita."
+    },
+    {
+      "code": "LU",
+      "name": "Luxembourg",
+      "slug": "luxembourg",
+      "status": "partial",
+      "network": "peppol",
+      "peppol_supported": true,
+      "standard": "EN 16931",
+      "formats": [
+        "PEPPOL BIS Billing 3.0"
+      ],
+      "detail_tier": "minimal",
+      "phases": [
+        {
+          "scope": "b2g",
+          "obligation": "receive",
+          "date": "2020-04-18",
+          "date_precision": "approximate",
+          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        },
+        {
+          "scope": "b2b",
+          "obligation": "both",
+          "date": null,
+          "date_precision": "unknown",
+          "applies_to": "No adopted national B2B mandate",
+          "threshold": null,
+          "voluntary": true,
+          "needs_verification": true
+        }
+      ],
+      "sources": [],
+      "last_verified": "2026-09-08",
+      "notes": "B2G phased by company size 2021-2023. No B2B mandate."
+    },
+    {
+      "code": "LV",
+      "name": "Latvia",
+      "slug": "latvia",
+      "status": "active",
+      "network": "peppol",
+      "peppol_supported": true,
+      "standard": "EN 16931",
+      "formats": [
+        "EN 16931"
+      ],
+      "detail_tier": "minimal",
+      "phases": [
+        {
+          "scope": "b2g",
+          "obligation": "receive",
+          "date": "2020-04-18",
+          "date_precision": "approximate",
+          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        },
+        {
+          "scope": "b2b",
+          "obligation": "both",
+          "date": "2026-01-01",
+          "date_precision": "approximate",
+          "applies_to": "All businesses, following a B2G phase",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        }
+      ],
+      "sources": [],
+      "last_verified": "2026-09-08",
+      "notes": "B2B mandate in force since January 2026 following a B2G phase. Commencement date needs source verification."
+    },
+    {
+      "code": "MT",
+      "name": "Malta",
+      "slug": "malta",
+      "status": "partial",
+      "network": "peppol",
+      "peppol_supported": true,
+      "standard": "EN 16931",
+      "formats": [
+        "EN 16931"
+      ],
+      "detail_tier": "minimal",
+      "phases": [
+        {
+          "scope": "b2g",
+          "obligation": "receive",
+          "date": "2020-04-18",
+          "date_precision": "approximate",
+          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        },
+        {
+          "scope": "b2b",
+          "obligation": "both",
+          "date": null,
+          "date_precision": "unknown",
+          "applies_to": "No adopted national B2B mandate",
+          "threshold": null,
+          "voluntary": true,
+          "needs_verification": true
+        }
+      ],
+      "sources": [],
+      "last_verified": "2026-09-08",
+      "notes": "B2G only."
+    },
+    {
+      "code": "NL",
+      "name": "Netherlands",
+      "slug": "netherlands",
+      "status": "partial",
+      "network": "peppol",
+      "peppol_supported": true,
+      "standard": "EN 16931",
+      "formats": [
+        "PEPPOL BIS Billing 3.0"
+      ],
+      "phases": [
+        {
+          "scope": "b2g",
+          "obligation": "both",
+          "date": "2019-04-18",
+          "date_precision": "approximate",
+          "applies_to": "All public-sector suppliers",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        },
+        {
+          "scope": "b2b",
+          "obligation": "both",
+          "date": null,
+          "date_precision": "unknown",
+          "applies_to": "Voluntary; expected to follow the EU ViDA timetable",
+          "threshold": null,
+          "voluntary": true,
+          "needs_verification": true
+        }
+      ],
+      "sources": [],
+      "last_verified": "2026-09-08",
+      "notes": "No national B2B mandate. Expected to arrive via ViDA rather than domestic law.",
+      "detail_tier": "full"
+    },
+    {
+      "code": "NO",
+      "name": "Norway",
+      "slug": "norway",
+      "status": "partial",
+      "network": "peppol",
+      "peppol_supported": true,
+      "standard": "EN 16931",
+      "formats": [
+        "EHF",
+        "PEPPOL BIS Billing 3.0"
+      ],
+      "phases": [
+        {
+          "scope": "b2g",
+          "obligation": "both",
+          "date": "2012-07-01",
+          "date_precision": "approximate",
+          "applies_to": "All government suppliers",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        },
+        {
+          "scope": "b2b",
+          "obligation": "issue",
+          "date": "2027-01-01",
+          "date_precision": "exact",
+          "applies_to": "All VAT-registered businesses",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        },
+        {
+          "scope": "b2b",
+          "obligation": "receive",
+          "date": "2030-01-01",
+          "date_precision": "exact",
+          "applies_to": "All VAT-registered businesses, alongside digital bookkeeping",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        }
+      ],
+      "sources": [],
+      "last_verified": "2026-09-08",
+      "notes": "EEA, not EU. Long-standing B2G mandate; B2B issuance obligation lands 2027.",
+      "detail_tier": "full"
+    },
+    {
+      "code": "PL",
+      "name": "Poland",
+      "slug": "poland",
+      "status": "active",
+      "network": "national",
+      "peppol_supported": false,
+      "standard": "national (FA(2))",
+      "formats": [
+        "FA(2) XML via KSeF"
+      ],
+      "phases": [
+        {
+          "scope": "b2b",
+          "obligation": "both",
+          "date": "2026-02-01",
+          "date_precision": "exact",
+          "applies_to": "All Polish VAT-registered businesses",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        }
+      ],
+      "sources": [],
+      "last_verified": "2026-09-08",
+      "notes": "KSeF (Krajowy System e-Faktur) is a mandatory national clearance platform, not PEPPOL. The go-live date has been postponed more than once historically, so verify before relying on it.",
+      "detail_tier": "full"
+    },
+    {
+      "code": "PT",
+      "name": "Portugal",
+      "slug": "portugal",
+      "status": "partial",
+      "network": "hybrid",
+      "peppol_supported": true,
+      "standard": "EN 16931",
+      "formats": [
+        "CIUS-PT",
+        "UBL 2.1"
+      ],
+      "detail_tier": "minimal",
+      "phases": [
+        {
+          "scope": "b2g",
+          "obligation": "receive",
+          "date": "2020-04-18",
+          "date_precision": "approximate",
+          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        },
+        {
+          "scope": "b2b",
+          "obligation": "both",
+          "date": null,
+          "date_precision": "unknown",
+          "applies_to": "No adopted national B2B mandate",
+          "threshold": null,
+          "voluntary": true,
+          "needs_verification": true
+        }
+      ],
+      "sources": [],
+      "last_verified": "2026-09-08",
+      "notes": "B2G mandatory; B2B governed by ATCUD/QR and SAF-T reporting rather than an e-invoicing mandate."
+    },
+    {
+      "code": "RO",
+      "name": "Romania",
+      "slug": "romania",
+      "status": "active",
+      "network": "national",
+      "peppol_supported": false,
+      "standard": "EN 16931",
+      "formats": [
+        "RO_CIUS (UBL)"
+      ],
+      "detail_tier": "minimal",
+      "phases": [
+        {
+          "scope": "b2g",
+          "obligation": "receive",
+          "date": "2020-04-18",
+          "date_precision": "approximate",
+          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        },
+        {
+          "scope": "b2b",
+          "obligation": "both",
+          "date": "2024-07-01",
+          "date_precision": "approximate",
+          "applies_to": "All VAT-registered businesses via RO e-Factura",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        }
+      ],
+      "sources": [],
+      "last_verified": "2026-09-08",
+      "notes": "RO e-Factura is a national clearance platform. Phased through 2024."
+    },
+    {
+      "code": "SE",
+      "name": "Sweden",
+      "slug": "sweden",
+      "status": "partial",
+      "network": "peppol",
+      "peppol_supported": true,
+      "standard": "EN 16931",
+      "formats": [
+        "PEPPOL BIS Billing 3.0"
+      ],
+      "detail_tier": "minimal",
+      "phases": [
+        {
+          "scope": "b2g",
+          "obligation": "receive",
+          "date": "2020-04-18",
+          "date_precision": "approximate",
+          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        },
+        {
+          "scope": "b2b",
+          "obligation": "both",
+          "date": null,
+          "date_precision": "unknown",
+          "applies_to": "No adopted national B2B mandate",
+          "threshold": null,
+          "voluntary": true,
+          "needs_verification": true
+        }
+      ],
+      "sources": [],
+      "last_verified": "2026-09-08",
+      "notes": "B2G mandatory since 2019. No B2B mandate; PEPPOL adoption is high voluntarily."
+    },
+    {
+      "code": "SI",
+      "name": "Slovenia",
+      "slug": "slovenia",
+      "status": "partial",
+      "network": "peppol",
+      "peppol_supported": true,
+      "standard": "EN 16931",
+      "formats": [
+        "e-SLOG",
+        "EN 16931"
+      ],
+      "detail_tier": "minimal",
+      "phases": [
+        {
+          "scope": "b2g",
+          "obligation": "receive",
+          "date": "2020-04-18",
+          "date_precision": "approximate",
+          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        },
+        {
+          "scope": "b2b",
+          "obligation": "both",
+          "date": null,
+          "date_precision": "unknown",
+          "applies_to": "No adopted national B2B mandate",
+          "threshold": null,
+          "voluntary": true,
+          "needs_verification": true
+        }
+      ],
+      "sources": [],
+      "last_verified": "2026-09-08",
+      "notes": "B2G mandatory via UJP. B2B proposals have been repeatedly deferred."
+    },
+    {
+      "code": "SK",
+      "name": "Slovakia",
+      "slug": "slovakia",
+      "status": "partial",
+      "network": "peppol",
+      "peppol_supported": true,
+      "standard": "EN 16931",
+      "formats": [
+        "EN 16931"
+      ],
+      "detail_tier": "minimal",
+      "phases": [
+        {
+          "scope": "b2g",
+          "obligation": "receive",
+          "date": "2020-04-18",
+          "date_precision": "approximate",
+          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": true
+        },
+        {
+          "scope": "b2b",
+          "obligation": "both",
+          "date": null,
+          "date_precision": "unknown",
+          "applies_to": "No adopted national B2B mandate",
+          "threshold": null,
+          "voluntary": true,
+          "needs_verification": true
+        }
+      ],
+      "sources": [],
+      "last_verified": "2026-09-08",
+      "notes": "B2G only; B2B mandate under preparation."
+    }
+  ]
+}
