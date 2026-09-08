@@ -4,7 +4,7 @@ Machine-readable e-invoicing mandate data for all 27 EU member states plus Norwa
 who must issue or receive structured invoices, from when, in which format, over
 which network.
 
-**Status: pre-release (v0.2.0). Not yet suitable for production — see [Verification](#verification).**
+**v1.0.0** — every country is sourced to its European Commission eInvoicing Country Factsheet (2026 edition). 9 of 73 phases remain provisional; see [Verification](#verification).
 
 ```bash
 npm install eu-einvoicing-mandates
@@ -55,10 +55,16 @@ common error in this space, and a single free-text `deadline` field guarantees i
 
 ## Verification
 
-Mandate dates slip. Poland's KSeF was postponed more than once, Spain's
-commencement depends on implementing regulation, and France's timetable has been
-revised. Any phase carrying `needs_verification: true` is provisional and should
-not be relied on for compliance decisions without checking the primary source.
+Mandate dates slip, and secondary sources lag. Every country here cites its
+European Commission factsheet; where the factsheet itself is out of date, the
+national source is cited alongside it and the discrepancy is recorded in `notes`
+(Norway is the current example).
+
+The 9 phases still flagged `needs_verification: true` are genuinely unsettled —
+pending legislation (Norway, Slovakia, Slovenia), a postponement not yet
+universally reported (Latvia), or an unpublished implementing regulation
+(Spain, which has no firm date at all despite the 2025/2026 dates circulating
+widely). Do not rely on those without checking the primary source.
 
 `scripts/validate.mjs` enforces the schema and catches internal contradictions —
 for example a country marked `upcoming` whose phase date has already passed. It

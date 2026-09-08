@@ -1,9 +1,9 @@
 {
   "$schema": "../schema/mandate.schema.json",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "license": "CC-BY-4.0",
   "last_updated": "2026-09-08",
-  "source_note": "Derived from invoicia.eu country guides. Official source URLs are not yet attached — see sources[] per country. Treat any phase with needs_verification=true as provisional.",
+  "source_note": "Phases are sourced to the European Commission eInvoicing Country Factsheets (2026 edition) and, where the factsheet lags national law, to the national authority. Phases still flagged needs_verification are pending legislation or depend on an unpublished implementing regulation.",
   "countries": [
     {
       "code": "AT",
@@ -14,42 +14,52 @@
       "peppol_supported": true,
       "standard": "EN 16931",
       "formats": [
-        "ebInterface",
+        "ebInterface 4.3/5/6",
+        "UBL 2.1",
+        "UN/CEFACT CII",
         "PEPPOL BIS Billing 3.0"
       ],
-      "detail_tier": "minimal",
+      "detail_tier": "full",
       "phases": [
         {
           "scope": "b2g",
-          "obligation": "receive",
+          "obligation": "issue",
           "date": "2020-04-18",
-          "date_precision": "approximate",
-          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "date_precision": "exact",
+          "applies_to": "All suppliers, including foreign ones, invoicing central government",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
         },
         {
           "scope": "b2b",
           "obligation": "both",
           "date": null,
           "date_precision": "unknown",
-          "applies_to": "No adopted national B2B mandate",
+          "applies_to": "No mandate; voluntary and subject to mutual agreement",
           "threshold": null,
           "voluntary": true,
-          "needs_verification": true
+          "needs_verification": false
         }
       ],
-      "sources": [],
+      "sources": [
+        {
+          "title": "eInvoicing in Austria",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108876/eInvoicing+in+Austria",
+          "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
+          "official": true,
+          "retrieved": "2026-09-08"
+        }
+      ],
       "last_verified": "2026-09-08",
-      "notes": "Long-standing B2G mandate via e-Rechnung.gv.at. No national B2B mandate adopted."
+      "notes": "Central government requires supplier issuance via e-Rechnung.gv.at / USP; sub-central adoption is voluntary. Two national CIUS apply."
     },
     {
       "code": "BE",
       "name": "Belgium",
       "slug": "belgium",
       "status": "active",
-      "network": "hybrid",
+      "network": "peppol",
       "peppol_supported": true,
       "standard": "EN 16931",
       "formats": [
@@ -57,19 +67,57 @@
       ],
       "phases": [
         {
+          "scope": "b2g",
+          "obligation": "both",
+          "date": "2022-11-01",
+          "date_precision": "exact",
+          "applies_to": "Public contracts of EUR 215,000 or more",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": false
+        },
+        {
+          "scope": "b2g",
+          "obligation": "both",
+          "date": "2023-05-01",
+          "date_precision": "exact",
+          "applies_to": "Public contracts of EUR 30,000 or more",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": false
+        },
+        {
+          "scope": "b2g",
+          "obligation": "both",
+          "date": "2023-11-01",
+          "date_precision": "exact",
+          "applies_to": "Public contracts below EUR 30,000 (contracts under EUR 3,000 exempt)",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": false
+        },
+        {
           "scope": "b2b",
           "obligation": "both",
           "date": "2026-01-01",
           "date_precision": "exact",
-          "applies_to": "All VAT-registered businesses, including small and micro businesses",
+          "applies_to": "All VAT-liable Belgian entities, for domestic transactions",
           "threshold": null,
           "voluntary": false,
           "needs_verification": false
         }
       ],
-      "sources": [],
+      "sources": [
+        {
+          "title": "eInvoicing in Belgium",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108877/eInvoicing+in+Belgium",
+          "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
+          "official": true,
+          "retrieved": "2026-09-08"
+        }
+      ],
       "last_verified": "2026-09-08",
-      "notes": "No size-based exemption and no phased rollout. B2C is exempt. Delivery via PEPPOL or the Mercurius platform.",
+      "notes": "Peppol is the exclusive route; an emailed PDF no longer satisfies the B2B obligation. Exemptions: entities registered for Belgian VAT only, certain VAT-exempt entities, bankrupt entities, and flat-rate scheme taxpayers. B2C is out of scope.",
       "detail_tier": "full"
     },
     {
@@ -81,34 +129,43 @@
       "peppol_supported": true,
       "standard": "EN 16931",
       "formats": [
-        "EN 16931"
+        "UBL 2.1",
+        "UN/CEFACT CII"
       ],
-      "detail_tier": "minimal",
+      "detail_tier": "full",
       "phases": [
         {
           "scope": "b2g",
           "obligation": "receive",
-          "date": "2020-04-18",
-          "date_precision": "approximate",
-          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "date": "2019-11-01",
+          "date_precision": "exact",
+          "applies_to": "Public sector entities, under Article 115a of the Public Procurement Act",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
         },
         {
           "scope": "b2b",
           "obligation": "both",
           "date": null,
           "date_precision": "unknown",
-          "applies_to": "No adopted national B2B mandate",
+          "applies_to": "No mandate; voluntary and subject to mutual agreement",
           "threshold": null,
           "voluntary": true,
-          "needs_verification": true
+          "needs_verification": false
         }
       ],
-      "sources": [],
+      "sources": [
+        {
+          "title": "eInvoicing in Bulgaria",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108878/eInvoicing+in+Bulgaria",
+          "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
+          "official": true,
+          "retrieved": "2026-09-08"
+        }
+      ],
       "last_verified": "2026-09-08",
-      "notes": "B2G only. B2B expected to follow ViDA rather than domestic law."
+      "notes": "A public consultation has been opened on adopting a mandatory clearance model along Italian/French lines; nothing adopted."
     },
     {
       "code": "CY",
@@ -119,34 +176,52 @@
       "peppol_supported": true,
       "standard": "EN 16931",
       "formats": [
-        "EN 16931"
+        "PEPPOL BIS Billing 3.0"
       ],
-      "detail_tier": "minimal",
+      "detail_tier": "full",
       "phases": [
         {
           "scope": "b2g",
           "obligation": "receive",
-          "date": "2020-04-18",
-          "date_precision": "approximate",
-          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "date": "2019-04-18",
+          "date_precision": "exact",
+          "applies_to": "Central public sector bodies",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
+        },
+        {
+          "scope": "b2g",
+          "obligation": "receive",
+          "date": "2020-04-18",
+          "date_precision": "exact",
+          "applies_to": "Sub-central entities",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": false
         },
         {
           "scope": "b2b",
           "obligation": "both",
           "date": null,
           "date_precision": "unknown",
-          "applies_to": "No adopted national B2B mandate",
+          "applies_to": "No mandate; voluntary and subject to mutual agreement",
           "threshold": null,
           "voluntary": true,
-          "needs_verification": true
+          "needs_verification": false
         }
       ],
-      "sources": [],
+      "sources": [
+        {
+          "title": "eInvoicing in Cyprus",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108880/eInvoicing+in+Cyprus",
+          "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
+          "official": true,
+          "retrieved": "2026-09-08"
+        }
+      ],
       "last_verified": "2026-09-08",
-      "notes": "B2G only."
+      "notes": "Supplier issuance is voluntary. Mandatory B2B/B2C is a stated long-term objective with no timeline."
     },
     {
       "code": "CZ",
@@ -157,35 +232,44 @@
       "peppol_supported": true,
       "standard": "EN 16931",
       "formats": [
+        "UBL 2.1",
         "ISDOC",
-        "EN 16931"
+        "EDIFACT"
       ],
-      "detail_tier": "minimal",
+      "detail_tier": "full",
       "phases": [
         {
           "scope": "b2g",
           "obligation": "receive",
-          "date": "2020-04-18",
-          "date_precision": "approximate",
-          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "date": "2016-10-01",
+          "date_precision": "exact",
+          "applies_to": "Public contracting authorities, under Act No. 134/2016 on Public Procurement",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
         },
         {
           "scope": "b2b",
           "obligation": "both",
           "date": null,
           "date_precision": "unknown",
-          "applies_to": "No adopted national B2B mandate",
+          "applies_to": "No mandate; voluntary and subject to mutual agreement",
           "threshold": null,
           "voluntary": true,
-          "needs_verification": true
+          "needs_verification": false
         }
       ],
-      "sources": [],
+      "sources": [
+        {
+          "title": "eInvoicing in Czechia",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108881/eInvoicing+in+Czech+Republic",
+          "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
+          "official": true,
+          "retrieved": "2026-09-08"
+        }
+      ],
       "last_verified": "2026-09-08",
-      "notes": "B2G only; ISDOC is the domestic format alongside EN 16931."
+      "notes": "B2G runs through the NEN platform. ISDOC is the national format alongside EN 16931."
     },
     {
       "code": "DE",
@@ -197,7 +281,8 @@
       "standard": "EN 16931",
       "formats": [
         "XRechnung",
-        "ZUGFeRD"
+        "ZUGFeRD 2.0+",
+        "PEPPOL BIS Billing 3.0"
       ],
       "phases": [
         {
@@ -215,10 +300,15 @@
           "obligation": "issue",
           "date": "2027-01-01",
           "date_precision": "exact",
-          "applies_to": "Businesses above the turnover threshold",
-          "threshold": null,
+          "applies_to": "Businesses with annual turnover above EUR 800,000",
+          "threshold": {
+            "metric": "annual_revenue",
+            "currency": "EUR",
+            "amount": 800000,
+            "comparator": "gt"
+          },
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
         },
         {
           "scope": "b2b",
@@ -231,53 +321,64 @@
           "needs_verification": false
         }
       ],
-      "sources": [],
+      "sources": [
+        {
+          "title": "eInvoicing in Germany",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108886/eInvoicing+in+Germany",
+          "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
+          "official": true,
+          "retrieved": "2026-09-08"
+        }
+      ],
       "last_verified": "2026-09-08",
-      "notes": "Receipt obligation is already universal; the send obligation phases in by company size to 2028. This asymmetry is the most commonly misread part of the German mandate.",
+      "notes": "Legal basis is the Wachstumschancengesetz amending §14 UStG, with detail in the BMF circular of 15 October 2025. The receive obligation has been universal since 2025 while issuance phases to 2028 — conflating the two is the most common error about the German mandate. Exemptions include businesses under EUR 22,000 turnover and invoices below EUR 250.",
       "detail_tier": "full"
     },
     {
       "code": "DK",
       "name": "Denmark",
       "slug": "denmark",
-      "status": "active",
+      "status": "partial",
       "network": "hybrid",
       "peppol_supported": true,
       "standard": "EN 16931",
       "formats": [
-        "OIOUBL",
+        "OIOUBL 3.0",
         "PEPPOL BIS Billing 3.0"
       ],
       "phases": [
         {
           "scope": "b2g",
           "obligation": "both",
-          "date": "2011-01-01",
-          "date_precision": "approximate",
-          "applies_to": "All public-sector suppliers via NemHandel",
+          "date": "2019-04-18",
+          "date_precision": "exact",
+          "applies_to": "All public contracting authorities (Bekendtgørelse nr. 346 af 15/03/2019)",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
         },
         {
           "scope": "b2b",
           "obligation": "both",
-          "date": "2024-01-01",
-          "date_precision": "approximate",
-          "applies_to": "Companies above the Bookkeeping Act revenue threshold",
-          "threshold": {
-            "metric": "annual_revenue",
-            "currency": "DKK",
-            "amount": 300000,
-            "comparator": "gt"
-          },
-          "voluntary": false,
-          "needs_verification": true
+          "date": null,
+          "date_precision": "unknown",
+          "applies_to": "No B2B e-invoicing mandate. The Bookkeeping Act requires the *capability* to send and receive structured invoices, not their use.",
+          "threshold": null,
+          "voluntary": true,
+          "needs_verification": false
         }
       ],
-      "sources": [],
+      "sources": [
+        {
+          "title": "eInvoicing in Denmark",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108882/eInvoicing+in+Denmark",
+          "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
+          "official": true,
+          "retrieved": "2026-09-08"
+        }
+      ],
       "last_verified": "2026-09-08",
-      "notes": "Driven by the Bookkeeping Act (bogføringsloven) digital bookkeeping requirement, which phases by company class rather than a single cutover.",
+      "notes": "Frequently misreported as a B2B mandate. The 2022 Bookkeeping Act (bogføringsloven) mandates certified digital bookkeeping systems — from January 2026 for businesses above DKK 300,000 turnover, July 2026 for in-house systems — but does not require invoices to be exchanged electronically. OIOUBL 3.0 became mandatory 15 November 2025, with OIOUBL 2.1 phased out by 15 May 2026.",
       "detail_tier": "full"
     },
     {
@@ -289,34 +390,43 @@
       "peppol_supported": true,
       "standard": "EN 16931",
       "formats": [
-        "EN 16931"
+        "EN 16931",
+        "national XML"
       ],
-      "detail_tier": "minimal",
+      "detail_tier": "full",
       "phases": [
         {
           "scope": "b2g",
           "obligation": "receive",
-          "date": "2020-04-18",
-          "date_precision": "approximate",
-          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "date": "2019-04-18",
+          "date_precision": "exact",
+          "applies_to": "Public sector, for procurement above EU thresholds",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
         },
         {
           "scope": "b2b",
-          "obligation": "both",
+          "obligation": "issue",
           "date": "2025-07-01",
-          "date_precision": "approximate",
-          "applies_to": "Sellers must issue an e-invoice on request from a registered buyer",
+          "date_precision": "exact",
+          "applies_to": "Suppliers, on request, where the buyer is registered as an e-invoice recipient in the commercial register",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
         }
       ],
-      "sources": [],
+      "sources": [
+        {
+          "title": "eInvoicing in Estonia",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108883/eInvoicing+in+Estonia",
+          "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
+          "official": true,
+          "retrieved": "2026-09-08"
+        }
+      ],
       "last_verified": "2026-09-08",
-      "notes": "Not a blanket mandate: it establishes a buyer's right to demand an e-invoice."
+      "notes": "Not a blanket mandate. The Accounting Act amendment works on a buyer's-choice principle: registered recipients are entitled to an EN 16931 invoice by default, and parties may still agree another format. Frequently misreported as a universal B2B mandate."
     },
     {
       "code": "ES",
@@ -332,11 +442,21 @@
       ],
       "phases": [
         {
+          "scope": "b2g",
+          "obligation": "receive",
+          "date": "2015-01-01",
+          "date_precision": "exact",
+          "applies_to": "Public entities must receive EN 16931 invoices (Law 25/2013), converted to Facturae via FACe",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": false
+        },
+        {
           "scope": "b2b",
           "obligation": "both",
-          "date": "2025-01-01",
-          "date_precision": "approximate",
-          "applies_to": "Large companies above the revenue threshold",
+          "date": null,
+          "date_precision": "unknown",
+          "applies_to": "Adopted under Law 18/2022 (Crea y Crece) but not commenced — the clock runs from publication of the implementing regulation: 1 year for businesses above EUR 8 million turnover, 2 years for the rest.",
           "threshold": {
             "metric": "annual_revenue",
             "currency": "EUR",
@@ -345,21 +465,19 @@
           },
           "voluntary": false,
           "needs_verification": true
-        },
-        {
-          "scope": "b2b",
-          "obligation": "both",
-          "date": "2027-01-01",
-          "date_precision": "approximate",
-          "applies_to": "All remaining businesses",
-          "threshold": null,
-          "voluntary": false,
-          "needs_verification": true
         }
       ],
-      "sources": [],
+      "sources": [
+        {
+          "title": "eInvoicing in Spain",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108901/eInvoicing+in+Spain",
+          "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
+          "official": true,
+          "retrieved": "2026-09-08"
+        }
+      ],
       "last_verified": "2026-09-08",
-      "notes": "Driven by the Crea y Crece law; commencement depends on implementing regulation and has slipped repeatedly. Dates here are the least reliable in the dataset.",
+      "notes": "The commonly-quoted 2025/2026 Spanish dates are unreliable: the B2B obligation is keyed to publication of the implementing regulation, which has not occurred, so no firm date exists. Separately, VERIFACTU (invoicing-software certification and QR codes) and SII real-time reporting above EUR 6 million turnover are distinct regimes and are often conflated with the e-invoicing mandate.",
       "detail_tier": "full"
     },
     {
@@ -371,35 +489,46 @@
       "peppol_supported": true,
       "standard": "EN 16931",
       "formats": [
-        "Finvoice",
+        "Finvoice 3.0",
+        "TEAPPSXML 3.0",
+        "UBL 2.1",
+        "UN/CEFACT CII",
         "PEPPOL BIS Billing 3.0"
       ],
-      "detail_tier": "minimal",
+      "detail_tier": "full",
       "phases": [
         {
           "scope": "b2g",
           "obligation": "receive",
-          "date": "2020-04-18",
-          "date_precision": "approximate",
-          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "date": "2019-04-01",
+          "date_precision": "exact",
+          "applies_to": "Central government bodies, under the eInvoicing Act 241/2019",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
         },
         {
           "scope": "b2b",
           "obligation": "both",
-          "date": "2020-04-01",
-          "date_precision": "approximate",
-          "applies_to": "Buyers may require e-invoices from suppliers",
+          "date": null,
+          "date_precision": "unknown",
+          "applies_to": "No mandate. Under Act 241/2019 businesses above EUR 10,000 turnover hold a right to request an EN 16931 invoice — an entitlement, not an obligation to use e-invoicing.",
           "threshold": null,
-          "voluntary": false,
-          "needs_verification": true
+          "voluntary": true,
+          "needs_verification": false
         }
       ],
-      "sources": [],
+      "sources": [
+        {
+          "title": "eInvoicing in Finland",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108884/eInvoicing+in+Finland",
+          "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
+          "official": true,
+          "retrieved": "2026-09-08"
+        }
+      ],
       "last_verified": "2026-09-08",
-      "notes": "Act on Electronic Invoicing gives businesses a right to request an EN 16931 invoice."
+      "notes": "Finland's B2G scope goes beyond the Directive minimum to national thresholds."
     },
     {
       "code": "FR",
@@ -412,18 +541,28 @@
       "formats": [
         "Factur-X",
         "UBL 2.1",
-        "CII"
+        "UN/CEFACT CII"
       ],
       "phases": [
+        {
+          "scope": "b2g",
+          "obligation": "receive",
+          "date": "2019-11-01",
+          "date_precision": "exact",
+          "applies_to": "Public authorities must receive and process EN 16931 invoices (Chorus Pro)",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": false
+        },
         {
           "scope": "b2b",
           "obligation": "receive",
           "date": "2026-09-01",
           "date_precision": "exact",
-          "applies_to": "All French VAT-registered businesses",
+          "applies_to": "All businesses must be able to receive e-invoices",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
         },
         {
           "scope": "b2b",
@@ -433,7 +572,7 @@
           "applies_to": "Large enterprises and mid-caps",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
         },
         {
           "scope": "b2b",
@@ -443,12 +582,20 @@
           "applies_to": "SMEs and micro-enterprises",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
         }
       ],
-      "sources": [],
+      "sources": [
+        {
+          "title": "eInvoicing in France",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108885/eInvoicing+in+France",
+          "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
+          "official": true,
+          "retrieved": "2026-09-08"
+        }
+      ],
       "last_verified": "2026-09-08",
-      "notes": "Routed through the Portail Public de Facturation (PPF) or an accredited PDP. The timetable has been revised more than once.",
+      "notes": "Legal basis is Article 26 of the 2022 amending finance law. Since October 2024 the state portal (PPF) no longer handles B2B invoice exchange — invoices route through accredited private platforms (PDP), with Chorus Pro acting as directory and data concentrator. DGFiP became the Peppol authority for France in July 2025.",
       "detail_tier": "full"
     },
     {
@@ -456,58 +603,86 @@
       "name": "Greece",
       "slug": "greece",
       "status": "partial",
-      "network": "hybrid",
+      "network": "peppol",
       "peppol_supported": true,
       "standard": "EN 16931",
       "formats": [
-        "myDATA",
-        "EN 16931"
+        "PEPPOL BIS Billing CIUS 3.0"
       ],
-      "detail_tier": "minimal",
+      "detail_tier": "full",
       "phases": [
         {
           "scope": "b2g",
-          "obligation": "receive",
-          "date": "2020-04-18",
-          "date_precision": "approximate",
-          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "obligation": "issue",
+          "date": "2024-09-13",
+          "date_precision": "exact",
+          "applies_to": "Gradual rollout across general government",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
+        },
+        {
+          "scope": "b2g",
+          "obligation": "issue",
+          "date": "2025-09-01",
+          "date_precision": "exact",
+          "applies_to": "General government expenditure above EUR 2,500",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": false
         },
         {
           "scope": "b2b",
           "obligation": "both",
           "date": null,
           "date_precision": "unknown",
-          "applies_to": "B2B mandate legislated but commencement dependent on derogation",
+          "applies_to": "No B2B mandate; legislative amendments would be required and no date is set.",
           "threshold": null,
-          "voluntary": false,
-          "needs_verification": true
+          "voluntary": true,
+          "needs_verification": false
         }
       ],
-      "sources": [],
+      "sources": [
+        {
+          "title": "eInvoicing in Greece",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108887/eInvoicing+in+Greece",
+          "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
+          "official": true,
+          "retrieved": "2026-09-08"
+        }
+      ],
       "last_verified": "2026-09-08",
-      "notes": "myDATA reporting is separate from, and already broader than, the e-invoicing mandate."
+      "notes": "myDATA real-time VAT reporting is a separate regime and is not an e-invoicing mandate. KE.D is the central receiving point over Peppol."
     },
     {
       "code": "HR",
       "name": "Croatia",
       "slug": "croatia",
-      "status": "partial",
+      "status": "active",
       "network": "hybrid",
       "peppol_supported": true,
       "standard": "EN 16931",
       "formats": [
-        "EN 16931 (UBL / CII) via FINA"
+        "UBL 2.1",
+        "UN/CEFACT CII"
       ],
       "phases": [
         {
           "scope": "b2g",
           "obligation": "both",
           "date": "2019-07-01",
-          "date_precision": "approximate",
-          "applies_to": "All government suppliers",
+          "date_precision": "exact",
+          "applies_to": "All public-sector suppliers (Act on eInvoicing in Public Procurement, OJ 94/2018)",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": false
+        },
+        {
+          "scope": "b2b",
+          "obligation": "both",
+          "date": "2026-01-01",
+          "date_precision": "exact",
+          "applies_to": "VAT-registered businesses (Fiscalization 2.0)",
           "threshold": null,
           "voluntary": false,
           "needs_verification": true
@@ -515,17 +690,25 @@
         {
           "scope": "b2b",
           "obligation": "both",
-          "date": null,
-          "date_precision": "unknown",
-          "applies_to": "Voluntary — no firm B2B mandate date adopted",
+          "date": "2027-01-01",
+          "date_precision": "exact",
+          "applies_to": "Sole traders, liberal professions and non-VAT-registered public bodies",
           "threshold": null,
-          "voluntary": true,
+          "voluntary": false,
           "needs_verification": true
         }
       ],
-      "sources": [],
+      "sources": [
+        {
+          "title": "eInvoicing in Croatia",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108879/eInvoicing+in+Croatia",
+          "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
+          "official": true,
+          "retrieved": "2026-09-08"
+        }
+      ],
       "last_verified": "2026-09-08",
-      "notes": "B2G via FINA eFaktura since 2019; B2B available voluntarily via Moj e-Račun.",
+      "notes": "B2G scope goes below EU thresholds (EUR 26,540 goods/services, EUR 66,360 works) via FINA's Servis eRačun za državu. The B2B mandate follows a public consultation opened 27 February 2025, with testing from 1 September 2025; treatment of non-residents with a VAT fixed establishment is still unsettled.",
       "detail_tier": "full"
     },
     {
@@ -533,38 +716,56 @@
       "name": "Hungary",
       "slug": "hungary",
       "status": "partial",
-      "network": "national",
-      "peppol_supported": false,
+      "network": "hybrid",
+      "peppol_supported": true,
       "standard": "EN 16931",
       "formats": [
-        "RTIR XML"
+        "EN 16931 (B2G)"
       ],
-      "detail_tier": "minimal",
+      "detail_tier": "full",
       "phases": [
         {
           "scope": "b2g",
           "obligation": "receive",
-          "date": "2020-04-18",
-          "date_precision": "approximate",
-          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "date": "2019-11-01",
+          "date_precision": "exact",
+          "applies_to": "Public sector entities, for procurement above EU thresholds",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
+        },
+        {
+          "scope": "b2b",
+          "obligation": "issue",
+          "date": "2025-07-01",
+          "date_precision": "exact",
+          "applies_to": "Electricity and natural gas suppliers only",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": false
         },
         {
           "scope": "b2b",
           "obligation": "both",
-          "date": "2021-01-04",
-          "date_precision": "approximate",
-          "applies_to": "Real-time invoice reporting for all domestic transactions",
+          "date": null,
+          "date_precision": "unknown",
+          "applies_to": "No general B2B e-invoicing mandate.",
           "threshold": null,
-          "voluntary": false,
-          "needs_verification": true
+          "voluntary": true,
+          "needs_verification": false
         }
       ],
-      "sources": [],
+      "sources": [
+        {
+          "title": "eInvoicing in Hungary",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108888/eInvoicing+in+Hungary",
+          "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
+          "official": true,
+          "retrieved": "2026-09-08"
+        }
+      ],
       "last_verified": "2026-09-08",
-      "notes": "RTIR is real-time REPORTING, not structured e-invoicing. Do not conflate the two."
+      "notes": "Hungary is routinely miscategorised. RTIR/NAV real-time invoice reporting (universal since 4 January 2021) is a VAT reporting obligation, not an e-invoicing mandate — any format the tax authority accepts may be used. The only sectoral e-invoicing obligation covers energy suppliers."
     },
     {
       "code": "IE",
@@ -575,34 +776,42 @@
       "peppol_supported": true,
       "standard": "EN 16931",
       "formats": [
-        "EN 16931"
+        "PEPPOL BIS Billing 3.0"
       ],
-      "detail_tier": "minimal",
+      "detail_tier": "full",
       "phases": [
         {
           "scope": "b2g",
           "obligation": "receive",
-          "date": "2020-04-18",
-          "date_precision": "approximate",
-          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "date": "2019-06-12",
+          "date_precision": "exact",
+          "applies_to": "Public sector entities, under Statutory Instrument 258/2019",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
         },
         {
           "scope": "b2b",
           "obligation": "both",
           "date": null,
           "date_precision": "unknown",
-          "applies_to": "No adopted national B2B mandate",
+          "applies_to": "No mandate; voluntary and subject to mutual agreement",
           "threshold": null,
           "voluntary": true,
-          "needs_verification": true
+          "needs_verification": false
         }
       ],
-      "sources": [],
+      "sources": [
+        {
+          "title": "eInvoicing in Ireland",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108889/eInvoicing+in+Ireland",
+          "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
+          "official": true,
+          "retrieved": "2026-09-08"
+        }
+      ],
       "last_verified": "2026-09-08",
-      "notes": "B2G only."
+      "notes": "Any future obligation is expected via ViDA rather than domestic law."
     },
     {
       "code": "IT",
@@ -615,32 +824,40 @@
       "formats": [
         "FatturaPA"
       ],
-      "detail_tier": "minimal",
+      "detail_tier": "full",
       "phases": [
         {
           "scope": "b2g",
-          "obligation": "receive",
-          "date": "2020-04-18",
-          "date_precision": "approximate",
-          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "obligation": "issue",
+          "date": "2015-03-31",
+          "date_precision": "exact",
+          "applies_to": "All suppliers to public administrations, via SdI",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
         },
         {
           "scope": "b2b",
           "obligation": "both",
           "date": "2019-01-01",
-          "date_precision": "approximate",
-          "applies_to": "All VAT-registered businesses via the SdI clearance platform",
+          "date_precision": "exact",
+          "applies_to": "All VAT-registered Italian businesses, for domestic transactions",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
         }
       ],
-      "sources": [],
+      "sources": [
+        {
+          "title": "eInvoicing in Italy",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108890/eInvoicing+in+Italy",
+          "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
+          "official": true,
+          "retrieved": "2026-09-08"
+        }
+      ],
       "last_verified": "2026-09-08",
-      "notes": "The EU's first universal B2B clearance mandate. FatturaPA via SdI, not PEPPOL."
+      "notes": "The EU's first universal B2B clearance mandate. The turnover-based exclusion for small businesses was removed in January 2024. Exchange is exclusively via the Sistema di Interscambio, not Peppol; Italy's derogation to keep SdI runs to 31 December 2027 under EU Decision 2024/3150."
     },
     {
       "code": "LT",
@@ -653,32 +870,40 @@
       "formats": [
         "EN 16931"
       ],
-      "detail_tier": "minimal",
+      "detail_tier": "full",
       "phases": [
         {
           "scope": "b2g",
-          "obligation": "receive",
-          "date": "2020-04-18",
-          "date_precision": "approximate",
-          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "obligation": "issue",
+          "date": "2017-07-01",
+          "date_precision": "exact",
+          "applies_to": "All suppliers in public procurement",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
         },
         {
           "scope": "b2b",
           "obligation": "both",
           "date": null,
           "date_precision": "unknown",
-          "applies_to": "No adopted national B2B mandate",
+          "applies_to": "No mandate; voluntary and subject to mutual agreement",
           "threshold": null,
           "voluntary": true,
-          "needs_verification": true
+          "needs_verification": false
         }
       ],
-      "sources": [],
+      "sources": [
+        {
+          "title": "eInvoicing in Lithuania",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108892/eInvoicing+in+Lithuania",
+          "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
+          "official": true,
+          "retrieved": "2026-09-08"
+        }
+      ],
       "last_verified": "2026-09-08",
-      "notes": "B2G via E-saskaita."
+      "notes": "SABIS replaced eSąskaita in September 2024 and is now the only accepted route, connected to Peppol."
     },
     {
       "code": "LU",
@@ -689,72 +914,109 @@
       "peppol_supported": true,
       "standard": "EN 16931",
       "formats": [
-        "PEPPOL BIS Billing 3.0"
+        "UBL 2.1",
+        "UN/CEFACT CII"
       ],
-      "detail_tier": "minimal",
+      "detail_tier": "full",
       "phases": [
         {
           "scope": "b2g",
-          "obligation": "receive",
-          "date": "2020-04-18",
-          "date_precision": "approximate",
-          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "obligation": "issue",
+          "date": "2022-05-18",
+          "date_precision": "exact",
+          "applies_to": "Large companies",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
+        },
+        {
+          "scope": "b2g",
+          "obligation": "issue",
+          "date": "2022-10-18",
+          "date_precision": "exact",
+          "applies_to": "Medium-sized companies",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": false
+        },
+        {
+          "scope": "b2g",
+          "obligation": "issue",
+          "date": "2023-03-18",
+          "date_precision": "exact",
+          "applies_to": "Small and newly established businesses",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": false
         },
         {
           "scope": "b2b",
           "obligation": "both",
           "date": null,
           "date_precision": "unknown",
-          "applies_to": "No adopted national B2B mandate",
+          "applies_to": "No mandate; voluntary and subject to mutual agreement",
           "threshold": null,
           "voluntary": true,
-          "needs_verification": true
+          "needs_verification": false
         }
       ],
-      "sources": [],
+      "sources": [
+        {
+          "title": "eInvoicing in Luxembourg",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108893/eInvoicing+in+Luxembourg",
+          "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
+          "official": true,
+          "retrieved": "2026-09-08"
+        }
+      ],
       "last_verified": "2026-09-08",
-      "notes": "B2G phased by company size 2021-2023. No B2B mandate."
+      "notes": "Phased B2G rollout by company size, complete since March 2023. Peppol is the backbone."
     },
     {
       "code": "LV",
       "name": "Latvia",
       "slug": "latvia",
-      "status": "active",
+      "status": "upcoming",
       "network": "peppol",
       "peppol_supported": true,
       "standard": "EN 16931",
       "formats": [
         "EN 16931"
       ],
-      "detail_tier": "minimal",
+      "detail_tier": "full",
       "phases": [
         {
           "scope": "b2g",
-          "obligation": "receive",
-          "date": "2020-04-18",
-          "date_precision": "approximate",
-          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "obligation": "issue",
+          "date": "2025-01-01",
+          "date_precision": "exact",
+          "applies_to": "Suppliers to budget institutions (contracts concluded before 31 December 2024 may defer to 1 January 2026)",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
         },
         {
           "scope": "b2b",
           "obligation": "both",
-          "date": "2026-01-01",
-          "date_precision": "approximate",
-          "applies_to": "All businesses, following a B2G phase",
+          "date": "2028-01-01",
+          "date_precision": "exact",
+          "applies_to": "All Latvian-registered businesses",
           "threshold": null,
           "voluntary": false,
           "needs_verification": true
         }
       ],
-      "sources": [],
+      "sources": [
+        {
+          "title": "eInvoicing in Latvia",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108891/eInvoicing+in+Latvia",
+          "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
+          "official": true,
+          "retrieved": "2026-09-08"
+        }
+      ],
       "last_verified": "2026-09-08",
-      "notes": "B2B mandate in force since January 2026 following a B2G phase. Commencement date needs source verification."
+      "notes": "The B2B mandate was postponed from 2026 to 2028, approved 5 June 2025 — widely still reported as 2026. Exemptions cover businesses using electronic tax registration devices, National Health Service systems, and national security agencies. Decentralised delivery via eAddress or Peppol providers."
     },
     {
       "code": "MT",
@@ -765,34 +1027,42 @@
       "peppol_supported": true,
       "standard": "EN 16931",
       "formats": [
-        "EN 16931"
+        "PEPPOL BIS Billing 3.0"
       ],
-      "detail_tier": "minimal",
+      "detail_tier": "full",
       "phases": [
         {
           "scope": "b2g",
           "obligation": "receive",
-          "date": "2020-04-18",
-          "date_precision": "approximate",
-          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "date": "2019-04-18",
+          "date_precision": "exact",
+          "applies_to": "Central contracting authorities and local councils, under Legal Notices 403/404 of 2018",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
         },
         {
           "scope": "b2b",
           "obligation": "both",
           "date": null,
           "date_precision": "unknown",
-          "applies_to": "No adopted national B2B mandate",
+          "applies_to": "No mandate; voluntary and subject to mutual agreement",
           "threshold": null,
           "voluntary": true,
-          "needs_verification": true
+          "needs_verification": false
         }
       ],
-      "sources": [],
+      "sources": [
+        {
+          "title": "eInvoicing in Malta",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108894/eInvoicing+in+Malta",
+          "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
+          "official": true,
+          "retrieved": "2026-09-08"
+        }
+      ],
       "last_verified": "2026-09-08",
-      "notes": "B2G only."
+      "notes": "No dedicated national e-invoicing platform. B2B/B2G expansion is under study in line with ViDA."
     },
     {
       "code": "NL",
@@ -803,33 +1073,43 @@
       "peppol_supported": true,
       "standard": "EN 16931",
       "formats": [
-        "PEPPOL BIS Billing 3.0"
+        "PEPPOL BIS Billing 3.0",
+        "SI-UBL 2.0 (NLCIUS)",
+        "UBL-OHNL"
       ],
       "phases": [
         {
           "scope": "b2g",
-          "obligation": "both",
-          "date": "2019-04-18",
-          "date_precision": "approximate",
-          "applies_to": "All public-sector suppliers",
+          "obligation": "receive",
+          "date": "2019-11-01",
+          "date_precision": "exact",
+          "applies_to": "Central government entities must receive and process EN 16931 invoices",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
         },
         {
           "scope": "b2b",
           "obligation": "both",
           "date": null,
           "date_precision": "unknown",
-          "applies_to": "Voluntary; expected to follow the EU ViDA timetable",
+          "applies_to": "No mandate; voluntary and requires buyer consent",
           "threshold": null,
           "voluntary": true,
-          "needs_verification": true
+          "needs_verification": false
         }
       ],
-      "sources": [],
+      "sources": [
+        {
+          "title": "eInvoicing in The Netherlands",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108895/eInvoicing+in+The+Netherlands",
+          "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
+          "official": true,
+          "retrieved": "2026-09-08"
+        }
+      ],
       "last_verified": "2026-09-08",
-      "notes": "No national B2B mandate. Expected to arrive via ViDA rather than domestic law.",
+      "notes": "No B2B or B2C mandate is planned nationally; any future obligation is expected to arrive through ViDA rather than domestic law.",
       "detail_tier": "full"
     },
     {
@@ -848,19 +1128,19 @@
         {
           "scope": "b2g",
           "obligation": "both",
-          "date": "2012-07-01",
-          "date_precision": "approximate",
-          "applies_to": "All government suppliers",
+          "date": "2019-04-02",
+          "date_precision": "exact",
+          "applies_to": "Public-sector suppliers, for transactions above NOK 100,000 excluding VAT",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
         },
         {
           "scope": "b2b",
           "obligation": "issue",
           "date": "2027-01-01",
           "date_precision": "exact",
-          "applies_to": "All VAT-registered businesses",
+          "applies_to": "Bookkeeping-obliged businesses, when invoicing businesses registered in ELMA",
           "threshold": null,
           "voluntary": false,
           "needs_verification": true
@@ -870,15 +1150,30 @@
           "obligation": "receive",
           "date": "2030-01-01",
           "date_precision": "exact",
-          "applies_to": "All VAT-registered businesses, alongside digital bookkeeping",
+          "applies_to": "Bookkeeping-obliged businesses, alongside mandatory digital bookkeeping",
           "threshold": null,
           "voluntary": false,
           "needs_verification": true
         }
       ],
-      "sources": [],
+      "sources": [
+        {
+          "title": "eInvoicing in Norway",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108905/eInvoicing+in+Norway",
+          "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
+          "official": true,
+          "retrieved": "2026-09-08"
+        },
+        {
+          "title": "Oppdragsbrev til Skattedirektoratet — obligatorisk e-faktura og digital bokføring (16 March 2026)",
+          "url": "https://www.regjeringen.no/no/dep/fin/id216/",
+          "publisher": "Finansdepartementet",
+          "official": true,
+          "retrieved": "2026-09-08"
+        }
+      ],
       "last_verified": "2026-09-08",
-      "notes": "EEA, not EU. Long-standing B2G mandate; B2B issuance obligation lands 2027.",
+      "notes": "EEA, not EU. The Commission factsheet is out of date here: on 16 March 2026 the Ministry of Finance instructed the Directorate of Taxes to bring the issuance obligation forward by a year, from 1 January 2028 to 1 January 2027, following Skattedirektoratet's consultation paper of 20 June 2025. Legislation amending the Bookkeeping Act is still before the Storting, so both dates remain provisional. The definition of 'electronic invoice' is to follow ViDA.",
       "detail_tier": "full"
     },
     {
@@ -886,27 +1181,71 @@
       "name": "Poland",
       "slug": "poland",
       "status": "active",
-      "network": "national",
-      "peppol_supported": false,
+      "network": "hybrid",
+      "peppol_supported": true,
       "standard": "national (FA(2))",
       "formats": [
-        "FA(2) XML via KSeF"
+        "FA(2) XML via KSeF",
+        "PEPPOL BIS Billing 3.0 (B2G)"
       ],
       "phases": [
+        {
+          "scope": "b2g",
+          "obligation": "both",
+          "date": "2019-04-18",
+          "date_precision": "exact",
+          "applies_to": "Contracting authorities, contracts of EUR 30,000 or more (PEF platform, Peppol)",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": false
+        },
+        {
+          "scope": "b2g",
+          "obligation": "both",
+          "date": "2019-08-01",
+          "date_precision": "exact",
+          "applies_to": "All contracting authorities",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": false
+        },
         {
           "scope": "b2b",
           "obligation": "both",
           "date": "2026-02-01",
           "date_precision": "exact",
-          "applies_to": "All Polish VAT-registered businesses",
+          "applies_to": "Businesses with annual revenue above PLN 200 million",
+          "threshold": {
+            "metric": "annual_revenue",
+            "currency": "PLN",
+            "amount": 200000000,
+            "comparator": "gt"
+          },
+          "voluntary": false,
+          "needs_verification": false
+        },
+        {
+          "scope": "b2b",
+          "obligation": "both",
+          "date": "2026-04-01",
+          "date_precision": "exact",
+          "applies_to": "All remaining B2B transactions",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
         }
       ],
-      "sources": [],
+      "sources": [
+        {
+          "title": "eInvoicing in Poland",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108896/eInvoicing+in+Poland",
+          "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
+          "official": true,
+          "retrieved": "2026-09-08"
+        }
+      ],
       "last_verified": "2026-09-08",
-      "notes": "KSeF (Krajowy System e-Faktur) is a mandatory national clearance platform, not PEPPOL. The go-live date has been postponed more than once historically, so verify before relying on it.",
+      "notes": "Two distinct regimes: B2G runs on Peppol via the PEF platform, while B2B uses the national KSeF clearance platform. The KSeF rollout was postponed from July 2024. Note the phase split — the widely-quoted 1 February 2026 date applies only to businesses above PLN 200 million revenue; everyone else follows on 1 April 2026.",
       "detail_tier": "full"
     },
     {
@@ -919,34 +1258,53 @@
       "standard": "EN 16931",
       "formats": [
         "CIUS-PT",
-        "UBL 2.1"
+        "UBL 2.1",
+        "XML-GS1"
       ],
-      "detail_tier": "minimal",
+      "detail_tier": "full",
       "phases": [
         {
           "scope": "b2g",
-          "obligation": "receive",
-          "date": "2020-04-18",
-          "date_precision": "approximate",
-          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "obligation": "issue",
+          "date": "2021-01-01",
+          "date_precision": "exact",
+          "applies_to": "Large companies (250+ employees, EUR 50M+ revenue or EUR 43M+ assets)",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
+        },
+        {
+          "scope": "b2g",
+          "obligation": "issue",
+          "date": "2025-01-01",
+          "date_precision": "exact",
+          "applies_to": "Small and medium-sized enterprises",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": false
         },
         {
           "scope": "b2b",
           "obligation": "both",
           "date": null,
           "date_precision": "unknown",
-          "applies_to": "No adopted national B2B mandate",
+          "applies_to": "No mandate; voluntary and subject to mutual agreement",
           "threshold": null,
           "voluntary": true,
-          "needs_verification": true
+          "needs_verification": false
         }
       ],
-      "sources": [],
+      "sources": [
+        {
+          "title": "eInvoicing in Portugal",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108897/eInvoicing+in+Portugal",
+          "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
+          "official": true,
+          "retrieved": "2026-09-08"
+        }
+      ],
       "last_verified": "2026-09-08",
-      "notes": "B2G mandatory; B2B governed by ATCUD/QR and SAF-T reporting rather than an e-invoicing mandate."
+      "notes": "Legal basis Lei n.º 111-B/2017 as amended. No B2B mandate: PDF invoices remain valid but from January 2026 require a Qualified Electronic Signature. SAF-T(PT) monthly reporting is a separate, long-standing regime."
     },
     {
       "code": "RO",
@@ -957,34 +1315,53 @@
       "peppol_supported": false,
       "standard": "EN 16931",
       "formats": [
-        "RO_CIUS (UBL)"
+        "RO_CIUS (UBL 2.1)",
+        "UN/CEFACT CII"
       ],
-      "detail_tier": "minimal",
+      "detail_tier": "full",
       "phases": [
         {
           "scope": "b2g",
           "obligation": "receive",
-          "date": "2020-04-18",
-          "date_precision": "approximate",
-          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "date": "2020-09-08",
+          "date_precision": "exact",
+          "applies_to": "Public sector entities, under Law 199/2020",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
         },
         {
           "scope": "b2b",
           "obligation": "both",
-          "date": "2024-07-01",
-          "date_precision": "approximate",
-          "applies_to": "All VAT-registered businesses via RO e-Factura",
+          "date": "2024-01-01",
+          "date_precision": "exact",
+          "applies_to": "Taxable persons established in Romania and non-established entities registered for Romanian VAT",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
+        },
+        {
+          "scope": "b2c",
+          "obligation": "issue",
+          "date": "2025-01-01",
+          "date_precision": "exact",
+          "applies_to": "All domestic B2C transactions taxable in Romania",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": false
         }
       ],
-      "sources": [],
+      "sources": [
+        {
+          "title": "eInvoicing in Romania",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108898/eInvoicing+in+Romania",
+          "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
+          "official": true,
+          "retrieved": "2026-09-08"
+        }
+      ],
       "last_verified": "2026-09-08",
-      "notes": "RO e-Factura is a national clearance platform. Phased through 2024."
+      "notes": "One of the few member states with a B2C mandate as well as B2B. Invoices must reach RO e-Factura within five calendar days of issuance. National specification RO_CIUS under Order 1366/2021."
     },
     {
       "code": "SE",
@@ -997,91 +1374,118 @@
       "formats": [
         "PEPPOL BIS Billing 3.0"
       ],
-      "detail_tier": "minimal",
+      "detail_tier": "full",
       "phases": [
         {
           "scope": "b2g",
           "obligation": "receive",
-          "date": "2020-04-18",
-          "date_precision": "approximate",
-          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "date": "2019-11-01",
+          "date_precision": "exact",
+          "applies_to": "Public sector entities, under Act 2018:1277",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
         },
         {
           "scope": "b2b",
           "obligation": "both",
           "date": null,
           "date_precision": "unknown",
-          "applies_to": "No adopted national B2B mandate",
+          "applies_to": "No mandate; voluntary and subject to mutual agreement",
           "threshold": null,
           "voluntary": true,
-          "needs_verification": true
+          "needs_verification": false
         }
       ],
-      "sources": [],
+      "sources": [
+        {
+          "title": "eInvoicing in Sweden",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108902/eInvoicing+in+Sweden",
+          "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
+          "official": true,
+          "retrieved": "2026-09-08"
+        }
+      ],
       "last_verified": "2026-09-08",
-      "notes": "B2G mandatory since 2019. No B2B mandate; PEPPOL adoption is high voluntarily."
+      "notes": "No B2B mandate and no VAT real-time reporting. Peppol BIS Billing 3.0 is used as the national CIUS without modification; voluntary adoption is high."
     },
     {
       "code": "SI",
       "name": "Slovenia",
       "slug": "slovenia",
-      "status": "partial",
+      "status": "upcoming",
       "network": "peppol",
       "peppol_supported": true,
       "standard": "EN 16931",
       "formats": [
-        "e-SLOG",
+        "e-SLOG 2.0",
         "EN 16931"
       ],
-      "detail_tier": "minimal",
+      "detail_tier": "full",
       "phases": [
         {
           "scope": "b2g",
-          "obligation": "receive",
-          "date": "2020-04-18",
-          "date_precision": "approximate",
-          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "obligation": "both",
+          "date": "2015-01-01",
+          "date_precision": "exact",
+          "applies_to": "All B2G and G2G transactions via the Public Payments Administration",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
         },
         {
           "scope": "b2b",
           "obligation": "both",
-          "date": null,
-          "date_precision": "unknown",
-          "applies_to": "No adopted national B2B mandate",
+          "date": "2027-01-01",
+          "date_precision": "exact",
+          "applies_to": "Businesses, pending adoption of the draft ZIERDED act",
           "threshold": null,
-          "voluntary": true,
+          "voluntary": false,
           "needs_verification": true
         }
       ],
-      "sources": [],
+      "sources": [
+        {
+          "title": "eInvoicing in Slovenia",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108900/eInvoicing+in+Slovenia",
+          "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
+          "official": true,
+          "retrieved": "2026-09-08"
+        }
+      ],
       "last_verified": "2026-09-08",
-      "notes": "B2G mandatory via UJP. B2B proposals have been repeatedly deferred."
+      "notes": "The B2B date depends on ZIERDED passing and has slipped before — treat as provisional. Peppol compatible since 2018."
     },
     {
       "code": "SK",
       "name": "Slovakia",
       "slug": "slovakia",
-      "status": "partial",
+      "status": "upcoming",
       "network": "peppol",
       "peppol_supported": true,
       "standard": "EN 16931",
       "formats": [
-        "EN 16931"
+        "UBL 2.1",
+        "UN/CEFACT CII"
       ],
-      "detail_tier": "minimal",
+      "detail_tier": "full",
       "phases": [
         {
           "scope": "b2g",
           "obligation": "receive",
-          "date": "2020-04-18",
-          "date_precision": "approximate",
-          "applies_to": "Contracting authorities, under Directive 2014/55/EU",
+          "date": "2019-08-01",
+          "date_precision": "exact",
+          "applies_to": "Central and sub-central authorities, under Act No. 2015/2019",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": false
+        },
+        {
+          "scope": "b2b",
+          "obligation": "both",
+          "date": "2027-01-01",
+          "date_precision": "exact",
+          "applies_to": "VAT taxpayers, domestic transactions, with simultaneous real-time reporting",
           "threshold": null,
           "voluntary": false,
           "needs_verification": true
@@ -1089,17 +1493,25 @@
         {
           "scope": "b2b",
           "obligation": "both",
-          "date": null,
-          "date_precision": "unknown",
-          "applies_to": "No adopted national B2B mandate",
+          "date": "2030-07-01",
+          "date_precision": "exact",
+          "applies_to": "Cross-border intra-EU transactions",
           "threshold": null,
-          "voluntary": true,
+          "voluntary": false,
           "needs_verification": true
         }
       ],
-      "sources": [],
+      "sources": [
+        {
+          "title": "eInvoicing in Slovakia",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108899/eInvoicing+in+Slovakia",
+          "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
+          "official": true,
+          "retrieved": "2026-09-08"
+        }
+      ],
       "last_verified": "2026-09-08",
-      "notes": "B2G only; B2B mandate under preparation."
+      "notes": "IS EFA migrates to Peppol-based infrastructure by 2027 to align with ViDA. Commonly listed as B2G-only, which is now out of date."
     }
   ]
 }
