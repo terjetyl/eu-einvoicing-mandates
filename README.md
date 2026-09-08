@@ -4,7 +4,7 @@ Machine-readable e-invoicing mandate data for all 27 EU member states plus Norwa
 who must issue or receive structured invoices, from when, in which format, over
 which network.
 
-**v1.0.0** — every country is sourced to its European Commission eInvoicing Country Factsheet (2026 edition). 9 of 73 phases remain provisional; see [Verification](#verification).
+**v1.1.0** — every country is sourced to its European Commission eInvoicing Country Factsheet (2026 edition); countries whose mandates were provisional also cite the national legal instrument. 4 of 76 phases remain provisional; see [Verification](#verification).
 
 ```bash
 npm install eu-einvoicing-mandates
@@ -55,16 +55,24 @@ common error in this space, and a single free-text `deadline` field guarantees i
 
 ## Verification
 
-Mandate dates slip, and secondary sources lag. Every country here cites its
-European Commission factsheet; where the factsheet itself is out of date, the
-national source is cited alongside it and the discrepancy is recorded in `notes`
-(Norway is the current example).
+Mandate dates slip, and secondary sources lag. Every country cites its European
+Commission factsheet. Where the factsheet is behind national law, the national
+instrument is cited alongside it and the discrepancy is recorded in `notes`.
 
-The 9 phases still flagged `needs_verification: true` are genuinely unsettled —
-pending legislation (Norway, Slovakia, Slovenia), a postponement not yet
-universally reported (Latvia), or an unpublished implementing regulation
-(Spain, which has no firm date at all despite the 2025/2026 dates circulating
-widely). Do not rely on those without checking the primary source.
+Three cases where following only the widely-repeated figure would mislead you:
+
+- **Norway** — the Commission factsheet still records no B2B mandate. There is
+  one: Lov 2026-06-19-39, passed by the Storting on 8 June 2026, commencing
+  1 January 2027.
+- **Slovenia** — often listed as 2027, from earlier drafts. ZIERDED was adopted
+  on 23 October 2025 (Uradni list RS 85/2025) with a date of **1 January 2028**.
+- **Spain** — quoted as 2025–2027 almost everywhere. Real Decreto 238/2026 is
+  in force, but sets no calendar date at all: the 12- and 24-month phases run
+  from a ministerial order that has not yet been made.
+
+The 4 phases still flagged `needs_verification: true` are Spain's two undated
+phases and the 2030 intra-EU extensions for Croatia and Slovakia, which follow
+the ViDA timetable rather than settled national law.
 
 `scripts/validate.mjs` enforces the schema and catches internal contradictions —
 for example a country marked `upcoming` whose phase date has already passed. It

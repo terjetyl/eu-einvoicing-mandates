@@ -1,9 +1,9 @@
 {
   "$schema": "../schema/mandate.schema.json",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "CC-BY-4.0",
   "last_updated": "2026-09-08",
-  "source_note": "Phases are sourced to the European Commission eInvoicing Country Factsheets (2026 edition) and, where the factsheet lags national law, to the national authority. Phases still flagged needs_verification are pending legislation or depend on an unpublished implementing regulation.",
+  "source_note": "Every country cites its European Commission eInvoicing Country Factsheet (2026 edition). Countries whose mandates were provisional additionally cite the national legal source, which takes precedence where the factsheet lags — see notes for Norway, Slovenia and Spain in particular.",
   "countries": [
     {
       "code": "AT",
@@ -456,13 +456,23 @@
           "obligation": "both",
           "date": null,
           "date_precision": "unknown",
-          "applies_to": "Adopted under Law 18/2022 (Crea y Crece) but not commenced — the clock runs from publication of the implementing regulation: 1 year for businesses above EUR 8 million turnover, 2 years for the rest.",
+          "applies_to": "Businesses with turnover above EUR 8 million (art. 121 Law 37/1992): 12 months after the ministerial order developing the public invoicing solution enters into force",
           "threshold": {
             "metric": "annual_revenue",
             "currency": "EUR",
             "amount": 8000000,
             "comparator": "gt"
           },
+          "voluntary": false,
+          "needs_verification": true
+        },
+        {
+          "scope": "b2b",
+          "obligation": "both",
+          "date": null,
+          "date_precision": "unknown",
+          "applies_to": "All remaining businesses and professionals: 24 months after that same ministerial order enters into force",
+          "threshold": null,
           "voluntary": false,
           "needs_verification": true
         }
@@ -474,10 +484,17 @@
           "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
           "official": true,
           "retrieved": "2026-09-08"
+        },
+        {
+          "title": "Real Decreto 238/2026, de 25 de marzo (BOE-A-2026-7295)",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2026-7295",
+          "publisher": "Boletín Oficial del Estado",
+          "official": true,
+          "retrieved": "2026-09-08"
         }
       ],
       "last_verified": "2026-09-08",
-      "notes": "The commonly-quoted 2025/2026 Spanish dates are unreliable: the B2B obligation is keyed to publication of the implementing regulation, which has not occurred, so no firm date exists. Separately, VERIFACTU (invoicing-software certification and QR codes) and SII real-time reporting above EUR 6 million turnover are distinct regimes and are often conflated with the e-invoicing mandate.",
+      "notes": "Widely misreported in both directions. The implementing regulation exists — Real Decreto 238/2026, published in the BOE on 31 March 2026 and in force since 20 April 2026 — so 'awaiting the regulation' is out of date. But it still sets no calendar date: obligations become enforceable 12 months (above EUR 8M turnover) and 24 months (everyone else) after the *ministerial order* governing the AEAT public invoicing solution enters into force, and that order is still pending. The 2025-2027 dates in circulation are wrong; commonly cited estimates now point at late 2027 and late 2028. VERIFACTU and SII are separate regimes.",
       "detail_tier": "full"
     },
     {
@@ -682,17 +699,37 @@
           "obligation": "both",
           "date": "2026-01-01",
           "date_precision": "exact",
-          "applies_to": "VAT-registered businesses (Fiscalization 2.0)",
+          "applies_to": "Businesses in the VAT system — issuing and receiving; an eRačun is the only legally valid domestic B2B invoice",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
+        },
+        {
+          "scope": "b2b",
+          "obligation": "receive",
+          "date": "2026-01-01",
+          "date_precision": "exact",
+          "applies_to": "Entities outside the VAT system — receiving only",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": false
+        },
+        {
+          "scope": "b2b",
+          "obligation": "issue",
+          "date": "2027-01-01",
+          "date_precision": "exact",
+          "applies_to": "Entities outside the VAT system and the public sector — issuing",
+          "threshold": null,
+          "voluntary": false,
+          "needs_verification": false
         },
         {
           "scope": "b2b",
           "obligation": "both",
-          "date": "2027-01-01",
+          "date": "2030-07-01",
           "date_precision": "exact",
-          "applies_to": "Sole traders, liberal professions and non-VAT-registered public bodies",
+          "applies_to": "Extension to intra-EU transactions",
           "threshold": null,
           "voluntary": false,
           "needs_verification": true
@@ -705,10 +742,17 @@
           "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
           "official": true,
           "retrieved": "2026-09-08"
+        },
+        {
+          "title": "Zakon o fiskalizaciji (Narodne novine 89/25)",
+          "url": "https://porezna.gov.hr/fiskalizacija/bezgotovinski-racuni",
+          "publisher": "Porezna uprava (Croatian Tax Administration)",
+          "official": true,
+          "retrieved": "2026-09-08"
         }
       ],
       "last_verified": "2026-09-08",
-      "notes": "B2G scope goes below EU thresholds (EUR 26,540 goods/services, EUR 66,360 works) via FINA's Servis eRačun za državu. The B2B mandate follows a public consultation opened 27 February 2025, with testing from 1 September 2025; treatment of non-residents with a VAT fixed establishment is still unsettled.",
+      "notes": "Zakon o fiskalizaciji was published in Narodne novine 89/25, entered into force on 1 September 2025 and applies from 1 January 2026, with system testing available from September 2025. Note the split for entities outside the VAT system: they must receive from 1 January 2026 but only issue from 1 January 2027. eRačun covers domestic B2B only — not B2C, and not invoices to foreign customers. FiskAplikacija is the free tax-administration portal.",
       "detail_tier": "full"
     },
     {
@@ -1000,10 +1044,10 @@
           "obligation": "both",
           "date": "2028-01-01",
           "date_precision": "exact",
-          "applies_to": "All Latvian-registered businesses",
+          "applies_to": "All businesses registered in Latvia",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
         }
       ],
       "sources": [
@@ -1013,10 +1057,24 @@
           "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
           "official": true,
           "retrieved": "2026-09-08"
+        },
+        {
+          "title": "Grozījumi Grāmatvedības likumā — obligātie e-rēķini no 2028. gada",
+          "url": "https://www.fm.gov.lv/lv/jaunums/obligatie-e-rekini-visiem-uznemumiem-bus-jaievies-no-2028gada",
+          "publisher": "Finanšu ministrija (Ministry of Finance)",
+          "official": true,
+          "retrieved": "2026-09-08"
+        },
+        {
+          "title": "Saeima adopts amendments to the Accounting Law (5 June 2025)",
+          "url": "https://www.saeima.lv/lv/aktualitates/saeimas-zinas/24961-/34793-obligatie-e-rekini-visiem-uznemumiem-bus-jaievies-no-2028-gada",
+          "publisher": "Saeima (Parliament of Latvia)",
+          "official": true,
+          "retrieved": "2026-09-08"
         }
       ],
       "last_verified": "2026-09-08",
-      "notes": "The B2B mandate was postponed from 2026 to 2028, approved 5 June 2025 — widely still reported as 2026. Exemptions cover businesses using electronic tax registration devices, National Health Service systems, and national security agencies. Decentralised delivery via eAddress or Peppol providers."
+      "notes": "The Saeima adopted amendments to the Accounting Law (Grāmatvedības likums) as urgent on 5 June 2025, deferring the B2B obligation from 2026 to 1 January 2028. Many sources still quote 2026. B2G has applied since 1 January 2025; structured e-invoicing is voluntary for non-budget entities in the interim. Exemptions cover businesses using electronic tax registration devices, National Health Service systems, and national security agencies."
     },
     {
       "code": "MT",
@@ -1140,20 +1198,20 @@
           "obligation": "issue",
           "date": "2027-01-01",
           "date_precision": "exact",
-          "applies_to": "Bookkeeping-obliged businesses, when invoicing businesses registered in ELMA",
+          "applies_to": "Bookkeeping-obliged businesses must send e-invoices to one another",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
         },
         {
           "scope": "b2b",
           "obligation": "receive",
           "date": "2030-01-01",
           "date_precision": "exact",
-          "applies_to": "Bookkeeping-obliged businesses, alongside mandatory digital bookkeeping",
+          "applies_to": "Bookkeeping-obliged businesses must keep digital accounts and receive e-invoices automatically",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
         }
       ],
       "sources": [
@@ -1165,15 +1223,22 @@
           "retrieved": "2026-09-08"
         },
         {
-          "title": "Oppdragsbrev til Skattedirektoratet — obligatorisk e-faktura og digital bokføring (16 March 2026)",
-          "url": "https://www.regjeringen.no/no/dep/fin/id216/",
+          "title": "Lov 19. juni 2026 nr. 39 om endringer i bokføringsloven (pliktig digital bokføring og e-fakturering mv.)",
+          "url": "https://lovdata.no/dokument/LTI/lov/2026-06-19-39",
+          "publisher": "Lovdata / Stortinget",
+          "official": true,
+          "retrieved": "2026-09-08"
+        },
+        {
+          "title": "Nye lovregler om e-fakturering i næringslivet settes i kraft",
+          "url": "https://www.regjeringen.no/no/aktuelt/nye-lovregler-om-e-fakturering-i-naringslivet-og-enkelte-andre-lovendringer-pa-finansmarkedsomradet-settes-i-kraft/id3166726/",
           "publisher": "Finansdepartementet",
           "official": true,
           "retrieved": "2026-09-08"
         }
       ],
       "last_verified": "2026-09-08",
-      "notes": "EEA, not EU. The Commission factsheet is out of date here: on 16 March 2026 the Ministry of Finance instructed the Directorate of Taxes to bring the issuance obligation forward by a year, from 1 January 2028 to 1 January 2027, following Skattedirektoratet's consultation paper of 20 June 2025. Legislation amending the Bookkeeping Act is still before the Storting, so both dates remain provisional. The definition of 'electronic invoice' is to follow ViDA.",
+      "notes": "EEA, not EU. No longer provisional: Prop. 44 L (2025-2026) was passed by the Storting on 8 June 2026 and promulgated as Lov 2026-06-19-39, in force from 1 July 2026 except the Bookkeeping Act changes, which commence 1 January 2027 (sending) and 1 January 2030 (digital bookkeeping and automatic receipt). The obligation was pulled forward a year from 2028 by a government instruction of 16 March 2026. The Commission factsheet still records Norway as having no B2B mandate and is out of date.",
       "detail_tier": "full"
     },
     {
@@ -1436,12 +1501,12 @@
         {
           "scope": "b2b",
           "obligation": "both",
-          "date": "2027-01-01",
+          "date": "2028-01-01",
           "date_precision": "exact",
-          "applies_to": "Businesses, pending adoption of the draft ZIERDED act",
+          "applies_to": "All entities in the Business Register and natural persons performing an activity",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
         }
       ],
       "sources": [
@@ -1451,10 +1516,17 @@
           "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
           "official": true,
           "retrieved": "2026-09-08"
+        },
+        {
+          "title": "Zakon o izmenjavi elektronskih računov in drugih elektronskih dokumentov (ZIERDED), Uradni list RS 85/2025",
+          "url": "https://www.uradni-list.si/glasilo-uradni-list-rs/vsebina/2025-01-3032",
+          "publisher": "Uradni list Republike Slovenije",
+          "official": true,
+          "retrieved": "2026-09-08"
         }
       ],
       "last_verified": "2026-09-08",
-      "notes": "The B2B date depends on ZIERDED passing and has slipped before — treat as provisional. Peppol compatible since 2018."
+      "notes": "ZIERDED was adopted by the Državni zbor on 23 October 2025 and published in Uradni list RS 85/2025 on 6 November 2025 — it is law, not a draft, and the date is 1 January 2028 rather than the 2027 often quoted from earlier drafts. B2C and cross-border e-invoicing remain optional. The act transposes Council Directive (EU) 2025/516 (ViDA). Accepted formats are e-SLOG 2.0 or another established structured standard."
     },
     {
       "code": "SK",
@@ -1485,17 +1557,17 @@
           "obligation": "both",
           "date": "2027-01-01",
           "date_precision": "exact",
-          "applies_to": "VAT taxpayers, domestic transactions, with simultaneous real-time reporting",
+          "applies_to": "VAT payers established in Slovakia, for domestic supplies to businesses and legal entities (recipients include non-VAT payers); B2G is covered on the same date",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": false
         },
         {
           "scope": "b2b",
           "obligation": "both",
           "date": "2030-07-01",
           "date_precision": "exact",
-          "applies_to": "Cross-border intra-EU transactions",
+          "applies_to": "Extension to cross-border intra-EU transactions",
           "threshold": null,
           "voluntary": false,
           "needs_verification": true
@@ -1508,10 +1580,17 @@
           "publisher": "European Commission (DIGITAL / CEF eInvoicing)",
           "official": true,
           "retrieved": "2026-09-08"
+        },
+        {
+          "title": "Zákon č. 385/2025 Z. z., ktorým sa mení a dopĺňa zákon č. 222/2004 Z. z. o DPH",
+          "url": "https://static.slov-lex.sk/static/SK/ZZ/2025/385/20270101.html",
+          "publisher": "Slov-Lex (Collection of Laws of the Slovak Republic)",
+          "official": true,
+          "retrieved": "2026-09-08"
         }
       ],
       "last_verified": "2026-09-08",
-      "notes": "IS EFA migrates to Peppol-based infrastructure by 2027 to align with ViDA. Commonly listed as B2G-only, which is now out of date."
+      "notes": "Adopted by the National Council on 9 December 2025 as Act No. 385/2025 Z. z., amending the VAT Act (222/2004). Mandatory from 1 January 2027 for domestic B2B and B2G, with a voluntary phase running since May 2026 and delivery over Peppol. B2C is out of scope. Often still listed as B2G-only."
     }
   ]
 }
