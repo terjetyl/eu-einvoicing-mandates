@@ -3,81 +3,221 @@
   "$id": "https://invoicia.eu/schema/mandate.schema.json",
   "title": "EU E-Invoicing Mandate Dataset",
   "type": "object",
-  "required": ["version", "license", "last_updated", "countries"],
+  "required": [
+    "version",
+    "license",
+    "last_updated",
+    "countries"
+  ],
   "properties": {
-    "version": { "type": "string" },
-    "license": { "type": "string" },
-    "last_updated": { "type": "string", "format": "date" },
-    "countries": { "type": "array", "items": { "$ref": "#/definitions/country" } }
+    "version": {
+      "type": "string"
+    },
+    "license": {
+      "type": "string"
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date"
+    },
+    "countries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/country"
+      }
+    }
   },
   "definitions": {
     "country": {
       "type": "object",
-      "required": ["code", "name", "status", "network", "phases", "last_verified"],
+      "required": [
+        "code",
+        "name",
+        "status",
+        "network",
+        "phases",
+        "last_verified"
+      ],
       "properties": {
-        "code": { "type": "string", "pattern": "^[A-Z]{2}$", "description": "ISO 3166-1 alpha-2" },
-        "name": { "type": "string" },
-        "slug": { "type": "string" },
+        "code": {
+          "type": "string",
+          "pattern": "^[A-Z]{2}$",
+          "description": "ISO 3166-1 alpha-2"
+        },
+        "name": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "string"
+        },
         "status": {
-          "enum": ["active", "upcoming", "partial", "none"],
+          "enum": [
+            "active",
+            "upcoming",
+            "partial",
+            "none"
+          ],
           "description": "active: a B2B mandate is in force. upcoming: adopted with a firm future date. partial: B2G only, or phased/voluntary B2B. none: no adopted mandate."
         },
         "network": {
-          "enum": ["peppol", "national", "hybrid"],
+          "enum": [
+            "peppol",
+            "national",
+            "hybrid"
+          ],
           "description": "peppol: PEPPOL is the delivery route. national: a state platform is mandatory (e.g. KSeF). hybrid: both routes exist."
         },
-        "peppol_supported": { "type": "boolean" },
-        "standard": { "type": "string", "description": "Underlying semantic standard, normally EN 16931" },
-        "formats": { "type": "array", "items": { "type": "string" } },
-        "phases": { "type": "array", "items": { "$ref": "#/definitions/phase" } },
-        "sources": { "type": "array", "items": { "$ref": "#/definitions/source" } },
-        "last_verified": { "type": "string", "format": "date" },
-        "notes": { "type": "string" }
+        "peppol_supported": {
+          "type": "boolean"
+        },
+        "standard": {
+          "type": "string",
+          "description": "Underlying semantic standard, normally EN 16931"
+        },
+        "formats": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "phases": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/phase"
+          }
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/source"
+          }
+        },
+        "last_verified": {
+          "type": "string",
+          "format": "date"
+        },
+        "notes": {
+          "type": "string"
+        }
       }
     },
     "phase": {
       "type": "object",
-      "required": ["scope", "obligation", "date", "applies_to"],
+      "required": [
+        "scope",
+        "obligation",
+        "date",
+        "applies_to"
+      ],
       "description": "One dated obligation. Splitting phases is what lets a consumer answer 'is this mandatory for me on date D'.",
       "properties": {
-        "scope": { "enum": ["b2g", "b2b", "b2c"] },
-        "obligation": { "enum": ["issue", "receive", "both"] },
+        "scope": {
+          "enum": [
+            "b2g",
+            "b2b",
+            "b2c"
+          ]
+        },
+        "obligation": {
+          "enum": [
+            "issue",
+            "receive",
+            "both"
+          ]
+        },
         "date": {
-          "type": ["string", "null"],
+          "type": [
+            "string",
+            "null"
+          ],
           "format": "date",
           "description": "ISO 8601. null means adopted in principle but no firm date."
         },
         "date_precision": {
-          "enum": ["exact", "approximate", "unknown"],
+          "enum": [
+            "exact",
+            "approximate",
+            "unknown"
+          ],
           "description": "approximate where only a year or range is published."
         },
-        "applies_to": { "type": "string" },
+        "applies_to": {
+          "type": "string"
+        },
         "threshold": {
-          "type": ["object", "null"],
+          "type": [
+            "object",
+            "null"
+          ],
           "properties": {
-            "metric": { "enum": ["annual_revenue", "employees", "none"] },
-            "currency": { "type": "string" },
-            "amount": { "type": "number" },
-            "comparator": { "enum": ["gt", "gte", "lt", "lte"] }
+            "metric": {
+              "enum": [
+                "annual_revenue",
+                "employees",
+                "none"
+              ]
+            },
+            "currency": {
+              "type": "string"
+            },
+            "amount": {
+              "type": "number"
+            },
+            "comparator": {
+              "enum": [
+                "gt",
+                "gte",
+                "lt",
+                "lte"
+              ]
+            }
           }
         },
-        "voluntary": { "type": "boolean", "default": false },
+        "voluntary": {
+          "type": "boolean",
+          "default": false
+        },
         "needs_verification": {
           "type": "boolean",
           "default": false,
           "description": "Set where the date has slipped historically or the source is secondary. Consumers should treat these as provisional."
+        },
+        "breadth": {
+          "enum": [
+            "universal",
+            "threshold",
+            "sector",
+            "on_request"
+          ],
+          "description": "Who the obligation actually reaches. universal: every business in scope. threshold: only above a size/turnover threshold. sector: named industries only. on_request: applies only when the counterparty asks. Without this, a sectoral obligation is indistinguishable from a nationwide one."
         }
       }
     },
     "source": {
       "type": "object",
-      "required": ["title", "url"],
+      "required": [
+        "title",
+        "url"
+      ],
       "properties": {
-        "title": { "type": "string" },
-        "url": { "type": "string", "format": "uri" },
-        "publisher": { "type": "string" },
-        "official": { "type": "boolean", "description": "true only for government / EU institution sources" },
-        "retrieved": { "type": "string", "format": "date" }
+        "title": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "publisher": {
+          "type": "string"
+        },
+        "official": {
+          "type": "boolean",
+          "description": "true only for government / EU institution sources"
+        },
+        "retrieved": {
+          "type": "string",
+          "format": "date"
+        }
       }
     }
   }

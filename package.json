@@ -4,10 +4,39 @@
   "description": "Machine-readable e-invoicing mandate data for all 27 EU member states plus Norway — dates, formats, thresholds and networks, split by scope and obligation.",
   "type": "module",
   "main": "index.mjs",
-  "exports": { ".": "./index.mjs", "./data": "./data/mandates.json", "./schema": "./schema/mandate.schema.json" },
-  "files": ["index.mjs", "data", "schema"],
-  "scripts": { "validate": "node scripts/validate.mjs", "test": "node scripts/validate.mjs" },
-  "keywords": ["e-invoicing", "einvoicing", "peppol", "en16931", "vida", "xrechnung", "zugferd", "factur-x", "ksef", "fatturapa", "eu", "vat", "compliance"],
+  "exports": {
+    ".": "./index.mjs",
+    "./data": "./data/mandates.json",
+    "./schema": "./schema/mandate.schema.json",
+    "./readiness": "./readiness.mjs"
+  },
+  "files": [
+    "index.mjs",
+    "data",
+    "schema",
+    "readiness.mjs",
+    "INDEX.md"
+  ],
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "test": "node scripts/validate.mjs",
+    "build:index": "node scripts/build-index.mjs"
+  },
+  "keywords": [
+    "e-invoicing",
+    "einvoicing",
+    "peppol",
+    "en16931",
+    "vida",
+    "xrechnung",
+    "zugferd",
+    "factur-x",
+    "ksef",
+    "fatturapa",
+    "eu",
+    "vat",
+    "compliance"
+  ],
   "license": "CC-BY-4.0",
   "homepage": "https://invoicia.eu/eu-e-invoicing-mandates"
 }

@@ -4,7 +4,7 @@ Machine-readable e-invoicing mandate data for all 27 EU member states plus Norwa
 who must issue or receive structured invoices, from when, in which format, over
 which network.
 
-**v1.1.0** — every country is sourced to its European Commission eInvoicing Country Factsheet (2026 edition); countries whose mandates were provisional also cite the national legal instrument. 4 of 76 phases remain provisional; see [Verification](#verification).
+**v1.2.0** — every country is sourced to its European Commission eInvoicing Country Factsheet (2026 edition); countries whose mandates were provisional also cite the national legal instrument. 4 of 76 phases remain provisional; see [Verification](#verification).
 
 ```bash
 npm install eu-einvoicing-mandates
@@ -49,9 +49,25 @@ common error in this space, and a single free-text `deadline` field guarantees i
 | `status` | `active` (B2B mandate in force) · `upcoming` (adopted, future date) · `partial` (B2G only, or phased/voluntary B2B) · `none` |
 | `network` | `peppol` · `national` (a state clearance platform such as KSeF or SdI) · `hybrid` |
 | `phases[]` | Dated obligations, split by scope and direction |
+| `breadth` | `universal` · `threshold` · `sector` · `on_request` — who the obligation actually reaches |
 | `detail_tier` | `full` (researched country guide) · `minimal` (verified baseline only) |
 | `needs_verification` | The date is provisional — see below |
 | `sources[]` | Citations, official sources marked `official: true` |
+
+## Readiness Index
+
+[**INDEX.md**](INDEX.md) scores every country 0–100 on how far it has actually
+got — mandate, coverage, cross-border interoperability and certainty — computed
+entirely from this dataset (`npm run build:index`).
+
+`breadth` is what makes it honest. Hungary has a B2B e-invoicing obligation, but
+it covers energy suppliers only; Estonia's applies only when the buyer asks.
+Score those as national mandates and both land beside Belgium, which is how most
+published comparisons get it wrong. Weighted by breadth, Hungary sits below
+Italy, where it belongs.
+
+Interop is a separate column on purpose: Italy and Romania run mature mandates
+that a supplier elsewhere in the EU cannot reach over Peppol at all.
 
 ## Verification
 

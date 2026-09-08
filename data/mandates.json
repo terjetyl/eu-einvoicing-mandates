@@ -1,6 +1,6 @@
 {
   "$schema": "../schema/mandate.schema.json",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "license": "CC-BY-4.0",
   "last_updated": "2026-09-08",
   "source_note": "Every country cites its European Commission eInvoicing Country Factsheet (2026 edition). Countries whose mandates were provisional additionally cite the national legal source, which takes precedence where the factsheet lags — see notes for Norway, Slovenia and Spain in particular.",
@@ -29,7 +29,8 @@
           "applies_to": "All suppliers, including foreign ones, invoicing central government",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -39,7 +40,8 @@
           "applies_to": "No mandate; voluntary and subject to mutual agreement",
           "threshold": null,
           "voluntary": true,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         }
       ],
       "sources": [
@@ -74,7 +76,8 @@
           "applies_to": "Public contracts of EUR 215,000 or more",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2g",
@@ -84,7 +87,8 @@
           "applies_to": "Public contracts of EUR 30,000 or more",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2g",
@@ -94,7 +98,8 @@
           "applies_to": "Public contracts below EUR 30,000 (contracts under EUR 3,000 exempt)",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -104,7 +109,8 @@
           "applies_to": "All VAT-liable Belgian entities, for domestic transactions",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         }
       ],
       "sources": [
@@ -142,7 +148,8 @@
           "applies_to": "Public sector entities, under Article 115a of the Public Procurement Act",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -152,7 +159,8 @@
           "applies_to": "No mandate; voluntary and subject to mutual agreement",
           "threshold": null,
           "voluntary": true,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         }
       ],
       "sources": [
@@ -188,7 +196,8 @@
           "applies_to": "Central public sector bodies",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2g",
@@ -198,7 +207,8 @@
           "applies_to": "Sub-central entities",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -208,7 +218,8 @@
           "applies_to": "No mandate; voluntary and subject to mutual agreement",
           "threshold": null,
           "voluntary": true,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         }
       ],
       "sources": [
@@ -246,7 +257,8 @@
           "applies_to": "Public contracting authorities, under Act No. 134/2016 on Public Procurement",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -256,7 +268,8 @@
           "applies_to": "No mandate; voluntary and subject to mutual agreement",
           "threshold": null,
           "voluntary": true,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         }
       ],
       "sources": [
@@ -293,7 +306,8 @@
           "applies_to": "All German VAT-registered businesses",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -308,7 +322,8 @@
             "comparator": "gt"
           },
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "threshold"
         },
         {
           "scope": "b2b",
@@ -318,7 +333,8 @@
           "applies_to": "All remaining businesses",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         }
       ],
       "sources": [
@@ -355,7 +371,8 @@
           "applies_to": "All public contracting authorities (Bekendtgørelse nr. 346 af 15/03/2019)",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -365,7 +382,8 @@
           "applies_to": "No B2B e-invoicing mandate. The Bookkeeping Act requires the *capability* to send and receive structured invoices, not their use.",
           "threshold": null,
           "voluntary": true,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "threshold"
         }
       ],
       "sources": [
@@ -403,7 +421,8 @@
           "applies_to": "Public sector, for procurement above EU thresholds",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -413,7 +432,8 @@
           "applies_to": "Suppliers, on request, where the buyer is registered as an e-invoice recipient in the commercial register",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "on_request"
         }
       ],
       "sources": [
@@ -449,7 +469,8 @@
           "applies_to": "Public entities must receive EN 16931 invoices (Law 25/2013), converted to Facturae via FACe",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -464,7 +485,8 @@
             "comparator": "gt"
           },
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": true,
+          "breadth": "threshold"
         },
         {
           "scope": "b2b",
@@ -474,7 +496,8 @@
           "applies_to": "All remaining businesses and professionals: 24 months after that same ministerial order enters into force",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": true,
+          "breadth": "universal"
         }
       ],
       "sources": [
@@ -522,7 +545,8 @@
           "applies_to": "Central government bodies, under the eInvoicing Act 241/2019",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -532,7 +556,8 @@
           "applies_to": "No mandate. Under Act 241/2019 businesses above EUR 10,000 turnover hold a right to request an EN 16931 invoice — an entitlement, not an obligation to use e-invoicing.",
           "threshold": null,
           "voluntary": true,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         }
       ],
       "sources": [
@@ -569,7 +594,8 @@
           "applies_to": "Public authorities must receive and process EN 16931 invoices (Chorus Pro)",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -579,7 +605,8 @@
           "applies_to": "All businesses must be able to receive e-invoices",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -589,7 +616,8 @@
           "applies_to": "Large enterprises and mid-caps",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "threshold"
         },
         {
           "scope": "b2b",
@@ -599,7 +627,8 @@
           "applies_to": "SMEs and micro-enterprises",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "threshold"
         }
       ],
       "sources": [
@@ -636,7 +665,8 @@
           "applies_to": "Gradual rollout across general government",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2g",
@@ -646,7 +676,8 @@
           "applies_to": "General government expenditure above EUR 2,500",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -656,7 +687,8 @@
           "applies_to": "No B2B mandate; legislative amendments would be required and no date is set.",
           "threshold": null,
           "voluntary": true,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         }
       ],
       "sources": [
@@ -692,7 +724,8 @@
           "applies_to": "All public-sector suppliers (Act on eInvoicing in Public Procurement, OJ 94/2018)",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -702,7 +735,8 @@
           "applies_to": "Businesses in the VAT system — issuing and receiving; an eRačun is the only legally valid domestic B2B invoice",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -712,7 +746,8 @@
           "applies_to": "Entities outside the VAT system — receiving only",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -722,7 +757,8 @@
           "applies_to": "Entities outside the VAT system and the public sector — issuing",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -732,7 +768,8 @@
           "applies_to": "Extension to intra-EU transactions",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": true,
+          "breadth": "universal"
         }
       ],
       "sources": [
@@ -776,7 +813,8 @@
           "applies_to": "Public sector entities, for procurement above EU thresholds",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -786,7 +824,8 @@
           "applies_to": "Electricity and natural gas suppliers only",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "sector"
         },
         {
           "scope": "b2b",
@@ -796,7 +835,8 @@
           "applies_to": "No general B2B e-invoicing mandate.",
           "threshold": null,
           "voluntary": true,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         }
       ],
       "sources": [
@@ -832,7 +872,8 @@
           "applies_to": "Public sector entities, under Statutory Instrument 258/2019",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -842,7 +883,8 @@
           "applies_to": "No mandate; voluntary and subject to mutual agreement",
           "threshold": null,
           "voluntary": true,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         }
       ],
       "sources": [
@@ -878,7 +920,8 @@
           "applies_to": "All suppliers to public administrations, via SdI",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -888,7 +931,8 @@
           "applies_to": "All VAT-registered Italian businesses, for domestic transactions",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         }
       ],
       "sources": [
@@ -924,7 +968,8 @@
           "applies_to": "All suppliers in public procurement",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -934,7 +979,8 @@
           "applies_to": "No mandate; voluntary and subject to mutual agreement",
           "threshold": null,
           "voluntary": true,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         }
       ],
       "sources": [
@@ -971,7 +1017,8 @@
           "applies_to": "Large companies",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2g",
@@ -981,7 +1028,8 @@
           "applies_to": "Medium-sized companies",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2g",
@@ -991,7 +1039,8 @@
           "applies_to": "Small and newly established businesses",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -1001,7 +1050,8 @@
           "applies_to": "No mandate; voluntary and subject to mutual agreement",
           "threshold": null,
           "voluntary": true,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         }
       ],
       "sources": [
@@ -1037,7 +1087,8 @@
           "applies_to": "Suppliers to budget institutions (contracts concluded before 31 December 2024 may defer to 1 January 2026)",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -1047,7 +1098,8 @@
           "applies_to": "All businesses registered in Latvia",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         }
       ],
       "sources": [
@@ -1097,7 +1149,8 @@
           "applies_to": "Central contracting authorities and local councils, under Legal Notices 403/404 of 2018",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -1107,7 +1160,8 @@
           "applies_to": "No mandate; voluntary and subject to mutual agreement",
           "threshold": null,
           "voluntary": true,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         }
       ],
       "sources": [
@@ -1144,7 +1198,8 @@
           "applies_to": "Central government entities must receive and process EN 16931 invoices",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -1154,7 +1209,8 @@
           "applies_to": "No mandate; voluntary and requires buyer consent",
           "threshold": null,
           "voluntary": true,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         }
       ],
       "sources": [
@@ -1191,7 +1247,8 @@
           "applies_to": "Public-sector suppliers, for transactions above NOK 100,000 excluding VAT",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -1201,7 +1258,8 @@
           "applies_to": "Bookkeeping-obliged businesses must send e-invoices to one another",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -1211,7 +1269,8 @@
           "applies_to": "Bookkeeping-obliged businesses must keep digital accounts and receive e-invoices automatically",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         }
       ],
       "sources": [
@@ -1262,7 +1321,8 @@
           "applies_to": "Contracting authorities, contracts of EUR 30,000 or more (PEF platform, Peppol)",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2g",
@@ -1272,7 +1332,8 @@
           "applies_to": "All contracting authorities",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -1287,7 +1348,8 @@
             "comparator": "gt"
           },
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "threshold"
         },
         {
           "scope": "b2b",
@@ -1297,7 +1359,8 @@
           "applies_to": "All remaining B2B transactions",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         }
       ],
       "sources": [
@@ -1336,7 +1399,8 @@
           "applies_to": "Large companies (250+ employees, EUR 50M+ revenue or EUR 43M+ assets)",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2g",
@@ -1346,7 +1410,8 @@
           "applies_to": "Small and medium-sized enterprises",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -1356,7 +1421,8 @@
           "applies_to": "No mandate; voluntary and subject to mutual agreement",
           "threshold": null,
           "voluntary": true,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         }
       ],
       "sources": [
@@ -1393,7 +1459,8 @@
           "applies_to": "Public sector entities, under Law 199/2020",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -1403,7 +1470,8 @@
           "applies_to": "Taxable persons established in Romania and non-established entities registered for Romanian VAT",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2c",
@@ -1413,7 +1481,8 @@
           "applies_to": "All domestic B2C transactions taxable in Romania",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         }
       ],
       "sources": [
@@ -1449,7 +1518,8 @@
           "applies_to": "Public sector entities, under Act 2018:1277",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -1459,7 +1529,8 @@
           "applies_to": "No mandate; voluntary and subject to mutual agreement",
           "threshold": null,
           "voluntary": true,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         }
       ],
       "sources": [
@@ -1496,7 +1567,8 @@
           "applies_to": "All B2G and G2G transactions via the Public Payments Administration",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -1506,7 +1578,8 @@
           "applies_to": "All entities in the Business Register and natural persons performing an activity",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         }
       ],
       "sources": [
@@ -1550,7 +1623,8 @@
           "applies_to": "Central and sub-central authorities, under Act No. 2015/2019",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -1560,7 +1634,8 @@
           "applies_to": "VAT payers established in Slovakia, for domestic supplies to businesses and legal entities (recipients include non-VAT payers); B2G is covered on the same date",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": false
+          "needs_verification": false,
+          "breadth": "universal"
         },
         {
           "scope": "b2b",
@@ -1570,7 +1645,8 @@
           "applies_to": "Extension to cross-border intra-EU transactions",
           "threshold": null,
           "voluntary": false,
-          "needs_verification": true
+          "needs_verification": true,
+          "breadth": "universal"
         }
       ],
       "sources": [
