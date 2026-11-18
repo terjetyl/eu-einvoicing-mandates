@@ -4,7 +4,7 @@ Machine-readable e-invoicing mandate data for all 27 EU member states plus Norwa
 who must issue or receive structured invoices, from when, in which format, over
 which network.
 
-**v1.2.0** — every country is sourced to its European Commission eInvoicing Country Factsheet (2026 edition); countries whose mandates were provisional also cite the national legal instrument. 4 of 76 phases remain provisional; see [Verification](#verification).
+**v1.3.0** — every country is sourced to its European Commission eInvoicing Country Factsheet (2026 edition); countries whose mandates were provisional also cite the national legal instrument. 3 of 78 phases remain provisional; see [Verification](#verification) and [CHANGELOG.md](CHANGELOG.md).
 
 ```bash
 npm install eu-einvoicing-mandates
@@ -82,13 +82,14 @@ Three cases where following only the widely-repeated figure would mislead you:
   1 January 2027.
 - **Slovenia** — often listed as 2027, from earlier drafts. ZIERDED was adopted
   on 23 October 2025 (Uradni list RS 85/2025) with a date of **1 January 2028**.
-- **Spain** — quoted as 2025–2027 almost everywhere. Real Decreto 238/2026 is
-  in force, but sets no calendar date at all: the 12- and 24-month phases run
-  from a ministerial order that has not yet been made.
+- **Spain** — quoted as 2025–2027 almost everywhere. The real dates run from
+  Orden HAC/1028/2026, in force 6 October 2026: **6 October 2027** above
+  EUR 8 million turnover, **6 October 2028** for everyone else.
 
-The 4 phases still flagged `needs_verification: true` are Spain's two undated
-phases and the 2030 intra-EU extensions for Croatia and Slovakia, which follow
-the ViDA timetable rather than settled national law.
+The 3 phases still flagged `needs_verification: true` are the Netherlands'
+planned 2030 B2B mandate (a cabinet decision of 11 September 2026; the bill has
+not passed) and the 2030 intra-EU extensions for Croatia and Slovakia, which
+follow the ViDA timetable rather than settled national law.
 
 `scripts/validate.mjs` enforces the schema and catches internal contradictions —
 for example a country marked `upcoming` whose phase date has already passed. It

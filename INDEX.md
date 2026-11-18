@@ -1,8 +1,8 @@
 # EU E-Invoicing Readiness Index
 
 How far each member state has actually got with e-invoicing, scored 0–100 from
-[`data/mandates.json`](data/mandates.json). Generated 2026-09-08 from dataset
-v1.2.0 — regenerate with `npm run build:index`.
+[`data/mandates.json`](data/mandates.json). Generated 2026-11-18 from dataset
+v1.3.0 — regenerate with `npm run build:index`.
 
 ## Method
 
@@ -37,30 +37,30 @@ Peppol. A single blended number hides that; two columns do not.
 | 10 | Slovenia | **70** | 15 | 5 | 25 | 25 | peppol |
 | 11 | Estonia | **68** | 8 | 10 | 25 | 25 | peppol |
 | 12 | Slovakia | **62** | 15 | 5 | 25 | 17 | peppol |
-| 13 | Austria | **55** | 0 | 5 | 25 | 25 | peppol |
-| 14 | Bulgaria | **55** | 0 | 5 | 25 | 25 | peppol |
-| 15 | Cyprus | **55** | 0 | 5 | 25 | 25 | peppol |
-| 16 | Czechia | **55** | 0 | 5 | 25 | 25 | peppol |
-| 17 | Finland | **55** | 0 | 5 | 25 | 25 | peppol |
-| 18 | Greece | **55** | 0 | 5 | 25 | 25 | peppol |
-| 19 | Hungary | **55** | 6 | 9 | 15 | 25 | hybrid |
-| 20 | Ireland | **55** | 0 | 5 | 25 | 25 | peppol |
-| 21 | Lithuania | **55** | 0 | 5 | 25 | 25 | peppol |
-| 22 | Luxembourg | **55** | 0 | 5 | 25 | 25 | peppol |
-| 23 | Malta | **55** | 0 | 5 | 25 | 25 | peppol |
-| 24 | Netherlands | **55** | 0 | 5 | 25 | 25 | peppol |
+| 13 | Netherlands | **58** | 15 | 5 | 25 | 13 | peppol |
+| 14 | Austria | **55** | 0 | 5 | 25 | 25 | peppol |
+| 15 | Bulgaria | **55** | 0 | 5 | 25 | 25 | peppol |
+| 16 | Cyprus | **55** | 0 | 5 | 25 | 25 | peppol |
+| 17 | Czechia | **55** | 0 | 5 | 25 | 25 | peppol |
+| 18 | Finland | **55** | 0 | 5 | 25 | 25 | peppol |
+| 19 | Greece | **55** | 0 | 5 | 25 | 25 | peppol |
+| 20 | Hungary | **55** | 6 | 9 | 15 | 25 | hybrid |
+| 21 | Ireland | **55** | 0 | 5 | 25 | 25 | peppol |
+| 22 | Lithuania | **55** | 0 | 5 | 25 | 25 | peppol |
+| 23 | Luxembourg | **55** | 0 | 5 | 25 | 25 | peppol |
+| 24 | Malta | **55** | 0 | 5 | 25 | 25 | peppol |
 | 25 | Sweden | **55** | 0 | 5 | 25 | 25 | peppol |
-| 26 | Denmark | **45** | 0 | 5 | 15 | 25 | hybrid |
-| 27 | Portugal | **45** | 0 | 5 | 15 | 25 | hybrid |
-| 28 | Spain | **25** | 7 | 5 | 5 | 8 | national |
+| 26 | Spain | **50** | 15 | 5 | 5 | 25 | national |
+| 27 | Denmark | **45** | 0 | 5 | 15 | 25 | hybrid |
+| 28 | Portugal | **45** | 0 | 5 | 15 | 25 | hybrid |
 
 ## Reading it
 
 - A high **Mandate** score with low **Interop** means a country is strict but
   inward-facing — plan for a national platform integration, not just Peppol.
-- A low **Certainty** score means the dates are liable to move. Spain scores
-  lowest here for a reason: its obligation exists in law but has no calendar
-  date at all.
+- A low **Certainty** score means the dates are liable to move. The
+  Netherlands scores lowest here: its 2030 B2B date is a cabinet decision, not
+  yet law.
 - **Coverage** only counts what is in force today, so a country with an ambitious
   2028 mandate still scores 0 there. That is deliberate — this measures the
   present, not intentions.

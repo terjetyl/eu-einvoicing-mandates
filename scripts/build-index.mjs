@@ -36,9 +36,9 @@ ${readinessTable()}
 
 - A high **Mandate** score with low **Interop** means a country is strict but
   inward-facing — plan for a national platform integration, not just Peppol.
-- A low **Certainty** score means the dates are liable to move. Spain scores
-  lowest here for a reason: its obligation exists in law but has no calendar
-  date at all.
+- A low **Certainty** score means the dates are liable to move. The
+  Netherlands scores lowest here: its 2030 B2B date is a cabinet decision, not
+  yet law.
 - **Coverage** only counts what is in force today, so a country with an ambitious
   2028 mandate still scores 0 there. That is deliberate — this measures the
   present, not intentions.
