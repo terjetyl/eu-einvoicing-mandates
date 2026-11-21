@@ -3,8 +3,11 @@ import fs from "node:fs";
 import { readinessIndex, readinessTable } from "../readiness.mjs";
 import data from "../data/mandates.json" with { type: "json" };
 
-const rows = readinessIndex();
-const today = new Date().toISOString().slice(0, 10);
+// Scored and dated as of the dataset's last_updated, not the build day, so the
+// same data always gives the same INDEX.md and the CI freshness check does not
+// fail on later days or when a mandate date passes.
+const today = data.last_updated;
+const rows = readinessIndex({ date: today });
 const md = `# EU E-Invoicing Readiness Index
 
 How far each member state has actually got with e-invoicing, scored 0–100 from
@@ -30,7 +33,7 @@ Peppol. A single blended number hides that; two columns do not.
 
 ## Index
 
-${readinessTable()}
+${readinessTable({ date: today })}
 
 ## Reading it
 
